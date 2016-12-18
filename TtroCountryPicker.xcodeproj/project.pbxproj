@@ -7,13 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4ED3AF8A43DC5C9E396A928D /* Pods_TtroCountryPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E10DD6A5502DD40F66460AF /* Pods_TtroCountryPicker.framework */; };
 		751E52491E06687E0002F74B /* TtroCountryPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 751E52471E06687E0002F74B /* TtroCountryPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		751E52511E0668960002F74B /* CountryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E524F1E0668960002F74B /* CountryTableViewCell.swift */; };
+		751E52521E0668960002F74B /* MICountryPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E52501E0668960002F74B /* MICountryPicker.swift */; };
+		751E52751E06F1520002F74B /* BWSwipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E52731E06F1520002F74B /* BWSwipeCell.swift */; };
+		751E52761E06F1520002F74B /* BWSwipeRevealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751E52741E06F1520002F74B /* BWSwipeRevealCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3E10DD6A5502DD40F66460AF /* Pods_TtroCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TtroCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DBC9FF4540B0F75CC481FD0 /* Pods-TtroCountryPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TtroCountryPicker.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TtroCountryPicker/Pods-TtroCountryPicker.debug.xcconfig"; sourceTree = "<group>"; };
+		6E9F63D7BF5C237A167CD5D9 /* Pods-TtroCountryPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TtroCountryPicker.release.xcconfig"; path = "Pods/Target Support Files/Pods-TtroCountryPicker/Pods-TtroCountryPicker.release.xcconfig"; sourceTree = "<group>"; };
 		751E52441E06687E0002F74B /* TtroCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = TtroCountryPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		751E52471E06687E0002F74B /* TtroCountryPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TtroCountryPicker.h; sourceTree = "<group>"; };
 		751E52481E06687E0002F74B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		751E524F1E0668960002F74B /* CountryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryTableViewCell.swift; sourceTree = "<group>"; };
+		751E52501E0668960002F74B /* MICountryPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MICountryPicker.swift; sourceTree = "<group>"; };
+		751E52731E06F1520002F74B /* BWSwipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWSwipeCell.swift; sourceTree = "<group>"; };
+		751E52741E06F1520002F74B /* BWSwipeRevealCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BWSwipeRevealCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -21,17 +33,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4ED3AF8A43DC5C9E396A928D /* Pods_TtroCountryPicker.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6BEEC1519BDA7C51F43EA938 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3E10DD6A5502DD40F66460AF /* Pods_TtroCountryPicker.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		751E523A1E06687E0002F74B = {
 			isa = PBXGroup;
 			children = (
 				751E52461E06687E0002F74B /* TtroCountryPicker */,
 				751E52451E06687E0002F74B /* Products */,
+				C6BA7FBA0F5AE1D2D723EF25 /* Pods */,
+				6BEEC1519BDA7C51F43EA938 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -46,10 +69,31 @@
 		751E52461E06687E0002F74B /* TtroCountryPicker */ = {
 			isa = PBXGroup;
 			children = (
+				751E52721E06F1520002F74B /* BWSwipeRevealCell */,
 				751E52471E06687E0002F74B /* TtroCountryPicker.h */,
+				751E524F1E0668960002F74B /* CountryTableViewCell.swift */,
+				751E52501E0668960002F74B /* MICountryPicker.swift */,
 				751E52481E06687E0002F74B /* Info.plist */,
 			);
 			path = TtroCountryPicker;
+			sourceTree = "<group>";
+		};
+		751E52721E06F1520002F74B /* BWSwipeRevealCell */ = {
+			isa = PBXGroup;
+			children = (
+				751E52731E06F1520002F74B /* BWSwipeCell.swift */,
+				751E52741E06F1520002F74B /* BWSwipeRevealCell.swift */,
+			);
+			path = BWSwipeRevealCell;
+			sourceTree = "<group>";
+		};
+		C6BA7FBA0F5AE1D2D723EF25 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5DBC9FF4540B0F75CC481FD0 /* Pods-TtroCountryPicker.debug.xcconfig */,
+				6E9F63D7BF5C237A167CD5D9 /* Pods-TtroCountryPicker.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -70,10 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 751E524C1E06687E0002F74B /* Build configuration list for PBXNativeTarget "TtroCountryPicker" */;
 			buildPhases = (
+				091428F71FADEB3D901CBC3C /* [CP] Check Pods Manifest.lock */,
 				751E523F1E06687E0002F74B /* Sources */,
 				751E52401E06687E0002F74B /* Frameworks */,
 				751E52411E06687E0002F74B /* Headers */,
 				751E52421E06687E0002F74B /* Resources */,
+				9910EA1B9278E9669D2E6B78 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -96,6 +142,7 @@
 					751E52431E06687E0002F74B = {
 						CreatedOnToolsVersion = 8.1;
 						DevelopmentTeam = F53V3ZJV96;
+						LastSwiftMigration = 0810;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -127,11 +174,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		091428F71FADEB3D901CBC3C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9910EA1B9278E9669D2E6B78 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TtroCountryPicker/Pods-TtroCountryPicker-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		751E523F1E06687E0002F74B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				751E52521E0668960002F74B /* MICountryPicker.swift in Sources */,
+				751E52751E06F1520002F74B /* BWSwipeCell.swift in Sources */,
+				751E52761E06F1520002F74B /* BWSwipeRevealCell.swift in Sources */,
+				751E52511E0668960002F74B /* CountryTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +323,9 @@
 		};
 		751E524D1E06687E0002F74B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5DBC9FF4540B0F75CC481FD0 /* Pods-TtroCountryPicker.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F53V3ZJV96;
@@ -252,13 +338,16 @@
 				PRODUCT_BUNDLE_IDENTIFIER = ParsPay.TtroCountryPicker;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		751E524E1E06687E0002F74B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E9F63D7BF5C237A167CD5D9 /* Pods-TtroCountryPicker.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = F53V3ZJV96;
@@ -294,6 +383,7 @@
 				751E524E1E06687E0002F74B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
