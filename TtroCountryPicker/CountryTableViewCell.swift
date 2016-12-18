@@ -10,9 +10,9 @@ import UIKit
 import EasyPeasy
 
 open class CountryTableViewCell: BWSwipeRevealCell {
-    var flagImageView : UIImageView!
-    var nameLabel : UILabel!
-    var infoLabel : UILabel!
+    public var flagImageView : UIImageView!
+    public var nameLabel : UILabel!
+    public var infoLabel : UILabel!
     
     override public init(style: UITableViewCellStyle, reuseIdentifier: String?){
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -24,8 +24,8 @@ open class CountryTableViewCell: BWSwipeRevealCell {
         initElements()
     }
     
-    static let cellHeight : CGFloat = 75
-    static let elementHeight : CGFloat = 50
+    public static let cellHeight : CGFloat = 75
+    public static let elementHeight : CGFloat = 50
     
     func initElements(){
         backgroundColor = UIColor.ttroColors.white.color

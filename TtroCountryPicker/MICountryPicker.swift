@@ -49,8 +49,8 @@ public class Country: NSObject, CountryProtocol {
     public var code : String!
     public var currency : String!
     
-    var flag : UIImage?
-    var exchangeRate : Double = 0
+    public var flag : UIImage?
+    public var exchangeRate : Double = 0
 }
 
 public class MICountryPicker: UITableViewController, UISearchBarDelegate {
