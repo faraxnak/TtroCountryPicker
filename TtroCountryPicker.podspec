@@ -133,6 +133,8 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+  pod 'EasyPeasy'
+  pod 'UIColor_Hex_Swift'
   # pod 'PayWandBasicElements', :path => '../PayWandBasicElements/'
   # pod 'PayWandModelProtocols', :path => '../PayWandModelProtocols/PayWandModelProtocols/'
 
