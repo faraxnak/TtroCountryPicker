@@ -30,6 +30,13 @@ public protocol MICountryPickerDataSource : class {
     func countryPicker(addCountries countryNames: [String : String],
                        countryCurrencies : [String: String])
     func countryPicker(numberOfCountries picker: MICountryPicker) -> Int
+    
+    func countryPicker(_ picker : MICountryPicker, getCountriesName callback: ([String: String]) -> ())
+    
+    func countryPicker(_ picker : MICountryPicker, getCountriesPhone callback: ([String: String]) -> ())
+    
+    func countryPicker(_ picker : MICountryPicker, getCountriesCurrency callback: ([String: String]) -> ())
+    
 }
 
 //@objc public protocol CountryProtocol {
@@ -287,23 +294,16 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
     }
     
     func getData() {
-//        ServerConnection.sharedInstance.getCountryNames { (data, serverConnection, type) in
-////            print(data)
-//            if let countries = data as? GenericResponse {
-//                self.countries = countries.dict
-//                self.getCurrencies()
-//            }
-//        }
-        
+        dataSource.countryPicker(self, getCountriesName: { (countries) in
+            self.countries = countries
+            self.getCurrencies()
+        })
     }
     
     func getCurrencies() {
-//        ServerConnection.sharedInstance.getCountryCurrencies { (data, serverConnection, type) in
-//            //            print(data)
-//            if let currencies = (data as? GenericResponseProtocol)?.dict {
-//                self.dataSource.countryPicker(addCountries: self.countries, countryCurrencies: currencies)
-//            }
-//        }
+        dataSource.countryPicker(self, getCountriesCurrency: { (currencies) in
+            self.dataSource.countryPicker(addCountries: self.countries, countryCurrencies: currencies)
+        })
     }
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {

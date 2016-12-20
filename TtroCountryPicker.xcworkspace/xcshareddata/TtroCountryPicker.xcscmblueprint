@@ -1,20 +1,28 @@
 {
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "111E8A66FE1FBB59006D8F3CDCEFD728CC808096",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
 
   },
   "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
     "8D2D75E1AA0E181F828F2ED5900FC3876DB45392" : 9223372036854775807,
+    "111E8A66FE1FBB59006D8F3CDCEFD728CC808096" : 9223372036854775807,
     "DF86B076DBA3260E4C12EB256924FB55A8A75041" : 9223372036854775807
   },
   "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "2AE23495-DDED-46D7-A2EB-FD3A1AACF9B9",
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "8D2D75E1AA0E181F828F2ED5900FC3876DB45392" : "PayWandBasicElements\/",
+    "111E8A66FE1FBB59006D8F3CDCEFD728CC808096" : "TtroCountryPicker\/",
     "DF86B076DBA3260E4C12EB256924FB55A8A75041" : "PayWandModelProtocols\/PayWandModelProtocols\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TtroCountryPicker",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,
   "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "TtroCountryPicker.xcworkspace",
   "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/faraxnak\/TtroCountryPicker",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "111E8A66FE1FBB59006D8F3CDCEFD728CC808096"
+    },
     {
       "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/faraxnak\/PayWandBasicElements",
       "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
