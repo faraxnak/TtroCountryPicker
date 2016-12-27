@@ -8,6 +8,7 @@
 
 import UIKit
 import EasyPeasy
+import PayWandBasicElements
 
 open class CountryTableViewCell: BWSwipeRevealCell {
     public var flagImageView : UIImageView!
@@ -28,7 +29,7 @@ open class CountryTableViewCell: BWSwipeRevealCell {
     public static let elementHeight : CGFloat = 50
     
     func initElements(){
-        backgroundColor = UIColor.ttroColors.white.color
+        backgroundColor = UIColor.TtroColors.white.color
         
         flagImageView = UIImageView()
         flagImageView.translatesAutoresizingMaskIntoConstraints = false
@@ -63,5 +64,7 @@ open class CountryTableViewCell: BWSwipeRevealCell {
             CenterY().to(contentView, .centerY),
             Width(<=0*0.5).like(contentView)
         ]
+        
+        revealDirection = .none
     }
 }

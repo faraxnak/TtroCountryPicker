@@ -11,6 +11,7 @@ import CoreData
 import EasyPeasy
 import UIColor_Hex_Swift
 import PayWandModelProtocols
+import PayWandBasicElements
 
 @objc public protocol MICountryPickerDelegate: class {
     @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithName name: String, code: String)
@@ -27,17 +28,23 @@ public protocol MICountryPickerDataSource : class {
     
     func createFetchedResultsController() -> NSFetchedResultsController<NSFetchRequestResult>
     
-    func countryPicker(addCountries countryNames: [String : String],
-                       countryCurrencies : [String: String])
-    func countryPicker(numberOfCountries picker: MICountryPicker) -> Int
+    func setFRCPredicate(countryFRC fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, countryInfo : CountryProtocol)
     
-    func countryPicker(_ picker : MICountryPicker, getCountriesName callback: ([String: String]) -> ())
+//    func countryPicker(addCountries countryNames: [String : String],
+//                       countryCurrencies : [String: String])
     
-    func countryPicker(_ picker : MICountryPicker, getCountriesPhone callback: ([String: String]) -> ())
-    
-    func countryPicker(_ picker : MICountryPicker, getCountriesCurrency callback: ([String: String]) -> ())
+    func countryPicker(refreshCountries picker : MICountryPicker)
+    //func countryPicker(numberOfCountries picker: MICountryPicker) -> Int
     
 }
+
+//public protocol MICountryPickerServerDataSource : class {
+//    func countryPicker(_ picker : MICountryPicker, getCountriesName callback: @escaping ([String: String]) -> ())
+//    
+//    func countryPicker(_ picker : MICountryPicker, getCountriesPhone callback: @escaping ([String: String]) -> ())
+//    
+//    func countryPicker(_ picker : MICountryPicker, getCountriesCurrency callback: @escaping ([String: String]) -> ())
+//}
 
 //@objc public protocol CountryProtocol {
 //    
@@ -67,14 +74,13 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     
     fileprivate var searchController: UISearchController!
     //fileprivate let collation = UILocalizedIndexedCollation.current() as UILocalizedIndexedCollation
-    open weak var delegate: MICountryPickerDelegate?
-    open weak var dataSource : MICountryPickerDataSource!
+    public weak var pickerDelegate: MICountryPickerDelegate?
+    open weak var coreDataSource : MICountryPickerDataSource!
+//    open weak var serverDataSource : MICountryPickerServerDataSource!
     
     open var didSelectCountryClosure: ((String, String) -> ())?
     open var didSelectCountryWithCallingCodeClosure: ((String, String, String) -> ())?
     open var showCallingCodes = true
-    
-    var d : MICountryPickerDataSource!
     
     fileprivate var countries = [String:String]()
     
@@ -88,20 +94,20 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     
     convenience public init(completionHandler: ((String, String) -> ())?) {
         self.init()
-        self.didSelectCountryClosure = completionHandler
+//        self.didSelectCountryClosure = completionHandler
     }
     
-    public func checkCountryList(){
-        if (dataSource.countryPicker(numberOfCountries: self) == 0){
-            getData()
-        }
-    }
+//    public func checkCountryList(){
+//        if (coreDataSource.countryPicker(numberOfCountries: self) == 0){
+//            getData()
+//        }
+//    }
     
     
     override open func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor.ttroColors.white.color
-        
+        self.view.backgroundColor = UIColor.TtroColors.white.color
+        self.tableView.separatorStyle = .none
         performFetch()
     }
     
@@ -110,7 +116,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: countryPickerCell)
         createSearchBar()
         definesPresentationContext = true
-        self.navigationController?.navigationBar.barTintColor = UIColor.ttroColors.white.color
+        self.navigationController?.navigationBar.barTintColor = UIColor.TtroColors.white.color
         //        self.navigationController?.navigationBar.translucent = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
         self.navigationController?.view.backgroundColor = UIColor.orange
@@ -130,7 +136,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             searchController.searchResultsUpdater = self
             searchController.searchBar.delegate = self
             searchController.dimsBackgroundDuringPresentation = false
-            searchController.searchBar.barTintColor = UIColor.ttroColors.white.color
+            searchController.searchBar.barTintColor = UIColor.TtroColors.white.color
             tableView.tableHeaderView = searchController.searchBar
         }
     }
@@ -169,10 +175,12 @@ extension MICountryPicker {
         do {
             let country = Country() //try fetchedResultsController.object(at: indexPath) as! CountryMO
             //let bundle = "flags.bundle/"
-            dataSource.country(country, result:  fetchedResultsController.object(at: indexPath))
+            coreDataSource.country(country, result:  fetchedResultsController.object(at: indexPath))
             
-            if let filePath = Bundle(for: MICountryPicker.self).path(forResource:country.code.lowercased(), ofType: "png"){
+            if let filePath = Bundle(for: MICountryPicker.self).path(forResource: "/flags.bundle/" + country.code.lowercased(), ofType: "png"){
                 cell.flagImageView.image = UIImage(contentsOfFile: filePath)
+            } else {
+                // put general flag image instead of coutries flag
             }
             
             cell.nameLabel.text = country.name
@@ -188,7 +196,6 @@ extension MICountryPicker {
         } catch {
             print(error)
         }
-        
     }
     
     override open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -214,15 +221,15 @@ extension MICountryPicker {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let country = Country()
-        dataSource.country(country, result: fetchedResultsController.object(at: indexPath))
+        coreDataSource.country(country, result: fetchedResultsController.object(at: indexPath))
         
         searchController.view.endEditing(false)
         let cell = tableView.cellForRow(at: indexPath) as! CountryTableViewCell
         country.flag = cell.flagImageView.image
         //delegate?.countryPicker(self, didSelectCountryWithName: country.name!, code: country.code)
-        delegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id.intValue, dialCode: country.phoneCode)
-        delegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: Int(country.id), dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
-        delegate?.countryPicker?(self, didSelectCountryWithInfo: country)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id.intValue, dialCode: country.phoneCode)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: Int(country.id), dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country)
         didSelectCountryClosure?(country.name!, country.phoneCode)
         //didSelectCountryWithCallingCodeClosure?(country.name!, country.code, country.phoneCode)
     }
@@ -235,10 +242,15 @@ extension MICountryPicker: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
         if (searchController.searchBar.text != lastSearch){
             lastSearch = searchController.searchBar.text!
+            let country = Country()
             if (searchController.searchBar.selectedScopeButtonIndex == 1 && Int(searchController.searchBar.text!) != nil) {
-                self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "phoneCode beginswith %@", searchController.searchBar.text!)
+                country.phoneCode = searchController.searchBar.text!
+                coreDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
+                //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "phoneCode beginswith %@", searchController.searchBar.text!)
             } else if (searchController.searchBar.selectedScopeButtonIndex == 0 && searchController.searchBar.text != ""){
-                self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "name contains[cd] %@", searchController.searchBar.text!)
+                country.name = searchController.searchBar.text
+                coreDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
+                //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "name contains[cd] %@", searchController.searchBar.text!)
             } else {
                 self.fetchedResultsController.fetchRequest.predicate = nil
                 
@@ -269,8 +281,9 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
     func performFetch() {
         if (fetchedResultsController == nil){
             
-            fetchedResultsController = dataSource.createFetchedResultsController()
+            fetchedResultsController = coreDataSource.createFetchedResultsController()
             fetchedResultsController.delegate = self
+            coreDataSource.countryPicker(refreshCountries: self)
         }
         do {
             try fetchedResultsController.performFetch()
@@ -293,18 +306,18 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
         }
     }
     
-    func getData() {
-        dataSource.countryPicker(self, getCountriesName: { (countries) in
-            self.countries = countries
-            self.getCurrencies()
-        })
-    }
-    
-    func getCurrencies() {
-        dataSource.countryPicker(self, getCountriesCurrency: { (currencies) in
-            self.dataSource.countryPicker(addCountries: self.countries, countryCurrencies: currencies)
-        })
-    }
+//    func getData() {
+//        serverDataSource.countryPicker(self, getCountriesName: { (countries) in
+//            self.countries = countries
+//            self.getCurrencies()
+//        })
+//    }
+//    
+//    func getCurrencies() {
+//        serverDataSource.countryPicker(self, getCountriesCurrency: { (currencies) in
+//            self.coreDataSource.countryPicker(addCountries: self.countries, countryCurrencies: currencies)
+//        })
+//    }
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()
@@ -344,37 +357,6 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
     }
 }
 
-protocol ttroColorProtocol {
-    var color : UIColor { get }
-}
-
-extension UIColor {
-    enum ttroColors : ttroColorProtocol {
-        case white
-        case darkBlue
-        case lightBlue
-        case cyan
-        case green
-        case orange
-        case red
-        
-        var color: UIColor {
-            switch self {
-            case .white:
-                return UIColor("#f0f0f0")
-            case .cyan:
-                return UIColor("#50e6b4")
-            case .darkBlue:
-                return UIColor("#2d3c50")
-            case .lightBlue:
-                return UIColor("#3296dc")
-            case .green:
-                return UIColor("#2ecc71")
-            case .red:
-                return UIColor("#ba293f")
-            case .orange:
-                return UIColor("#ffa800")
-            }
-        }
-    }
+extension MICountryPicker : BWSwipeCellDelegate {
+    
 }
