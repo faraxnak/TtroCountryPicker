@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		028320628FAF48C4563E63E1E21A2662 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2F7A03397F68031808D81F16D5AAFDC /* CoreDataProtocols.swift */; };
+		028320628FAF48C4563E63E1E21A2662 /* CoreDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9499C9A7D9C66A23DB5ACA6313D0817B /* CoreDataProtocols.swift */; };
 		0E4D484CDC66423F39D398ED28B9A37F /* DimensionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 807D8B0E6F29C19627A5E83B22601D08 /* DimensionAttribute.swift */; };
 		1D2FF4D810821FA697B82E9BE08B029F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BFF802CE58F570F2C0C79A1D14B17DB /* Item.swift */; };
 		1DF51C6A3C9670B476965618958789DF /* HEXColor.h in Headers */ = {isa = PBXBuildFile; fileRef = 4A0344E2AC9A91ECB47535FE07773AAF /* HEXColor.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -15,9 +15,9 @@
 		1F98403FA7386FBD5C04706DA198E178 /* PositionAttribute+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 834A9AB3C56125A54104528B895AF50F /* PositionAttribute+AppKit.swift */; };
 		21B4004190D374EC78BFFCCFF818BF54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8900F985FB236D35F5A528AC23453 /* Foundation.framework */; };
 		238EDC1AB26BE7C697EF58F21B949C88 /* EasyPeasy-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FFA1E23324DF9B3EF08555A06DF0EF77 /* EasyPeasy-dummy.m */; };
-		26CDE1157827FA4BFC9FA32E8AF77182 /* PayWandBasicElements-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F862F4B0A3E866BE17086BC464F71A8A /* PayWandBasicElements-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26CDE1157827FA4BFC9FA32E8AF77182 /* PayWandBasicElements-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C53124114EFB9A64250A1A51B66DB7D6 /* PayWandBasicElements-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26F184F4BE8F793A2FBF2F5787817C01 /* EasyPeasy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D2752314D6FE2CF4CAE1525C486B4FF /* EasyPeasy.framework */; };
-		27862B4D37961F7750176BFFFDB09A65 /* PayWandBasicElements-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2EC4779F2BC886B700CE7883BBF6364E /* PayWandBasicElements-dummy.m */; };
+		27862B4D37961F7750176BFFFDB09A65 /* PayWandBasicElements-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2812F417BF30FCB0CB68AEDB0B93B50A /* PayWandBasicElements-dummy.m */; };
 		2999CC8832708A083BC62207860BB18A /* UIColor_Hex_Swift-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B573659E5B4AC4A7997B196D4A7D209 /* UIColor_Hex_Swift-dummy.m */; };
 		2C6A7839DF1791A13D96973BE9080BE1 /* NSArray+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = F03EC910C4A924E9D0B80BABBD497B81 /* NSArray+PureLayout.m */; };
 		2D322A0D080B100F6485741629FDDDE7 /* PureLayoutDefines.h in Headers */ = {isa = PBXBuildFile; fileRef = 1DF8ED924A9E56C1E60671F9CF3272BF /* PureLayoutDefines.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -27,7 +27,7 @@
 		32A5CF7C9046F0D677E1D6DFF66EF549 /* EasyPeasy-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A686346CE2E9EC65BA60FB32D4E57F9B /* EasyPeasy-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3474E4E655382B527D799C55021A3567 /* Attribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9B82A4666AC0783C10B5482F550525 /* Attribute.swift */; };
 		3EE7BA4DAA0833D25655FB41EC6CACB1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8900F985FB236D35F5A528AC23453 /* Foundation.framework */; };
-		405FECE11A47FFD41A1AE9A3ABBC9F9C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 012105A723F65DBC5B2A6EE37FD2D221 /* Extensions.swift */; };
+		405FECE11A47FFD41A1AE9A3ABBC9F9C /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F99B7430FCFDB436F1134B87A615FF0 /* Extensions.swift */; };
 		42240853BCB2FF54DF90799F571B636A /* SwiftyButton+ResizableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA63E48018BF4194BE50FC3687E5D63 /* SwiftyButton+ResizableImage.swift */; };
 		42DDC034671649DDD83A834774825CBB /* PositionAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCE82743A329FC0E4CD0AD38ABE5DFF5 /* PositionAttribute.swift */; };
 		44B2644538FBA736963EE6D7FC685A1A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FD48D6CE3F5F90CA57A87AE38F246E3 /* Constant.swift */; };
@@ -42,7 +42,7 @@
 		6144CD4C9DEA3674433311409C7A413A /* NSLayoutConstraint+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FD05C2618272817579DE214A194A6D49 /* NSLayoutConstraint+PureLayout.m */; };
 		626A93F15E5D1BA86F0EB5F2A6DF5EB0 /* SwiftyButton.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19D849431E4476C0689CC7B592153613 /* SwiftyButton.framework */; };
 		65E446EB9929339FA9AC3A27D9D392BD /* PureLayout+Internal.h in Headers */ = {isa = PBXBuildFile; fileRef = DD05720258997143EC5AADDD36F7CE0F /* PureLayout+Internal.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		66FFD6470B84E8606BAFDC4721A42A57 /* PayWandModelProtocols-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 646B1760DA71DA9A74B3409021D80F56 /* PayWandModelProtocols-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		66FFD6470B84E8606BAFDC4721A42A57 /* PayWandModelProtocols-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 26B3B2FF175C7BC72F1F21A61DD58C09 /* PayWandModelProtocols-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		6DC953D1EB0BD080211E55F1F61379F8 /* SwiftyCustomContentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E1F8CAB187828CEB42E110B2DB0B98 /* SwiftyCustomContentButton.swift */; };
 		727BF64E1D3FEB6C98E34E8EA852571D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5769A739C1BC09C0A99A205533473B46 /* UIKit.framework */; };
 		7347463E97C9F8A20A7F0C9DC29F1EA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8900F985FB236D35F5A528AC23453 /* Foundation.framework */; };
@@ -50,27 +50,27 @@
 		758797192BACECBF8D29541FA6ED5C2E /* PureLayout-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = AEA92B83CD3D32B0FD5DF2A7CE3143CF /* PureLayout-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7A0F916F1A203477574A378266B37955 /* NSLayoutConstraint+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 24907F57042E53F9BDAB6437FFECEDEF /* NSLayoutConstraint+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		7FD80237B2B9D85C9B5FAA2B95DADF7F /* ReferenceAttribute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26715E4823430C20A5D2C3B5D71294B1 /* ReferenceAttribute.swift */; };
-		8BEFAE1D274CCEA1C7CC1A996859F06B /* TtroDigitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = EC57163C7AD293EA645603F4221D7BE3 /* TtroDigitEntry.swift */; };
+		8BEFAE1D274CCEA1C7CC1A996859F06B /* TtroDigitEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4149D4B8C9A1C0CD7DE4278ECF951D /* TtroDigitEntry.swift */; };
 		8E0E660019420B111D1B730A20D55AAE /* UILayoutGuide+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C87F2729EF0F4119520142499987156E /* UILayoutGuide+Easy.swift */; };
 		9053EBA2CB510BFE30A7B32C12B8070E /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F991D62C0A9AC9BB8E05DD809A8F7775 /* Node.swift */; };
 		92CB93D6FFA5B0C89F01DC94CF66E316 /* ALView+PureLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = FD98FFF43FD4ADAC8415C39FE38D8877 /* ALView+PureLayout.m */; };
-		937911B70E1379591405268691651CCB /* ServerDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 532E27249381038CACC31A8155EB5FE3 /* ServerDataProtocols.swift */; };
+		937911B70E1379591405268691651CCB /* ServerDataProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 064240FA07C11966DCA9F4C4580488C6 /* ServerDataProtocols.swift */; };
 		9D5800496526AA7608455476C53AE0A6 /* Priority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E978873855136B75535D8A5439F8F12 /* Priority.swift */; };
 		A2B184DC7CC25D8F6EFB295E5E6380F6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8900F985FB236D35F5A528AC23453 /* Foundation.framework */; };
 		A42720873E5EE74C9F8E1CD01C109526 /* PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FC98C9B59DAC5F133333539ED3A575E /* PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AF1C514FDDF2C8ABD293519B029BAA0A /* PayWandModelProtocols-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D26574B4FBD241AA2A41DE63BD647DB /* PayWandModelProtocols-dummy.m */; };
+		AF1C514FDDF2C8ABD293519B029BAA0A /* PayWandModelProtocols-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = AF7770AA42B0728886DE9AD258978FDD /* PayWandModelProtocols-dummy.m */; };
 		BBDD5A2F124A7538D60BFC9B9B91C0EB /* DimensionAttribute+AppKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6480C84A3C99FB88F14335BB5A067A42 /* DimensionAttribute+AppKit.swift */; };
 		BC5AB76802C3AF039CFB6102E2E89AD7 /* Item+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = C2EE8B61A93DE06D0C28D56D45E16A30 /* Item+UIKit.swift */; };
 		C3F1CF25A547A3761DD89DB494CECF60 /* NSLayoutGuide+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C10A34F82B36DE560A8406B65BF6D99C /* NSLayoutGuide+Easy.swift */; };
-		CC6E8F1CDA2B0D89DF44C5E5A31DB89E /* TtroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AD10BBB14BDA524C8FCC8DD1BD4FCD5 /* TtroTextField.swift */; };
+		CC6E8F1CDA2B0D89DF44C5E5A31DB89E /* TtroTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E116B0239CAD2878692681E85B2596 /* TtroTextField.swift */; };
 		CCF8C5BDA51404F535B734C8FD7A5B0D /* PositionAttribute+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0423AEBBBD232868ACD36843C7AE957F /* PositionAttribute+UIKit.swift */; };
 		D02A677AD1580B41FAC9E98BB72B453A /* NSArray+PureLayout.h in Headers */ = {isa = PBXBuildFile; fileRef = 05CBFD899F5B265D781CFD7ED40C84F5 /* NSArray+PureLayout.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D26ECF6D846C3291E945D1FD1165D4DD /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0529F48124D42CDBDD7DC068ACE8D7BD /* Context.swift */; };
-		D29E365E9502999AF56DB090AAA39D69 /* TtroLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA02DF384CB48624880994B31510286D /* TtroLabel.swift */; };
+		D29E365E9502999AF56DB090AAA39D69 /* TtroLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DDE4D4BAF5875038707469D8D51BB33 /* TtroLabel.swift */; };
 		E69E7F33456A876E95754DAAB129229A /* UIColor_Hex_Swift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7FDA84DB2E410BAEBB72A21A25DEF281 /* UIColor_Hex_Swift.framework */; };
 		E900CFD43E9F8D702203C5AB4AB0CA1C /* Pods-TtroCountryPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 96F8E1C5B35D6641BD62936FAA0891BA /* Pods-TtroCountryPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E93BA27148856B73E9630D4ED895EB99 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C59926DCEF77984C0936B7EF4C7E86A /* UIColorExtension.swift */; };
-		EB63AD8E37B16EDDBEAB7D7A4021E7F0 /* TtroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E168BDBE95683389A33D2115AC056534 /* TtroButton.swift */; };
+		EB63AD8E37B16EDDBEAB7D7A4021E7F0 /* TtroButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FB9DEC376D317FEE4B4CD54697E9DBC /* TtroButton.swift */; };
 		EDB236F3139700DAA77B89630C40382F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9D8900F985FB236D35F5A528AC23453 /* Foundation.framework */; };
 		F38334631957B4B5948D2E2552F26AB9 /* Pods-TtroCountryPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B4156F110E4B2AD40E7BB6F76858B9C /* Pods-TtroCountryPicker-dummy.m */; };
 		FE600361B8F8D819D07EE55AD1BA9BCF /* NSView+Easy.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA811D27DA03F4841B168A1A43DB290 /* NSView+Easy.swift */; };
@@ -151,23 +151,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		012105A723F65DBC5B2A6EE37FD2D221 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		0423AEBBBD232868ACD36843C7AE957F /* PositionAttribute+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "PositionAttribute+UIKit.swift"; path = "EasyPeasy/PositionAttribute+UIKit.swift"; sourceTree = "<group>"; };
 		0529F48124D42CDBDD7DC068ACE8D7BD /* Context.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Context.swift; path = EasyPeasy/Context.swift; sourceTree = "<group>"; };
 		05CBFD899F5B265D781CFD7ED40C84F5 /* NSArray+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+PureLayout.h"; path = "PureLayout/PureLayout/NSArray+PureLayout.h"; sourceTree = "<group>"; };
-		0AD10BBB14BDA524C8FCC8DD1BD4FCD5 /* TtroTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroTextField.swift; sourceTree = "<group>"; };
+		064240FA07C11966DCA9F4C4580488C6 /* ServerDataProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerDataProtocols.swift; sourceTree = "<group>"; };
+		0F99B7430FCFDB436F1134B87A615FF0 /* Extensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		0FB9DEC376D317FEE4B4CD54697E9DBC /* TtroButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroButton.swift; sourceTree = "<group>"; };
+		11770872620289C3925AB89B203F3BD9 /* PayWandModelProtocols.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PayWandModelProtocols.xcconfig; sourceTree = "<group>"; };
 		15177EFDC72809A153511C0ED7C7391B /* Item+AppKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Item+AppKit.swift"; path = "EasyPeasy/Item+AppKit.swift"; sourceTree = "<group>"; };
 		1719E78D254FC7EEB02402606CF3E7F4 /* EasyPeasy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = EasyPeasy.framework; path = EasyPeasy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		19D849431E4476C0689CC7B592153613 /* SwiftyButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C59926DCEF77984C0936B7EF4C7E86A /* UIColorExtension.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UIColorExtension.swift; path = HEXColor/UIColorExtension.swift; sourceTree = "<group>"; };
 		1DF8ED924A9E56C1E60671F9CF3272BF /* PureLayoutDefines.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayoutDefines.h; path = PureLayout/PureLayout/PureLayoutDefines.h; sourceTree = "<group>"; };
-		2414CF450247A9D7885B626351150353 /* PayWandBasicElements-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandBasicElements-prefix.pch"; sourceTree = "<group>"; };
 		24907F57042E53F9BDAB6437FFECEDEF /* NSLayoutConstraint+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSLayoutConstraint+PureLayout.h"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.h"; sourceTree = "<group>"; };
 		26715E4823430C20A5D2C3B5D71294B1 /* ReferenceAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReferenceAttribute.swift; path = EasyPeasy/ReferenceAttribute.swift; sourceTree = "<group>"; };
+		26B3B2FF175C7BC72F1F21A61DD58C09 /* PayWandModelProtocols-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandModelProtocols-umbrella.h"; sourceTree = "<group>"; };
 		2781152E1ACFC46B481A2F99FCCE0A50 /* EasyPeasy-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPeasy-prefix.pch"; sourceTree = "<group>"; };
+		2812F417BF30FCB0CB68AEDB0B93B50A /* PayWandBasicElements-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PayWandBasicElements-dummy.m"; sourceTree = "<group>"; };
 		2CA63E48018BF4194BE50FC3687E5D63 /* SwiftyButton+ResizableImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftyButton+ResizableImage.swift"; path = "SwiftyButton/SwiftyButton+ResizableImage.swift"; sourceTree = "<group>"; };
-		2EC4779F2BC886B700CE7883BBF6364E /* PayWandBasicElements-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PayWandBasicElements-dummy.m"; sourceTree = "<group>"; };
-		3113C0FBF5A3FF9AD2D6D80180E08219 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3150652AC5BEC5342CA12C22379EEE9F /* Pods-TtroCountryPicker-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-TtroCountryPicker-acknowledgements.plist"; sourceTree = "<group>"; };
 		31E1F8CAB187828CEB42E110B2DB0B98 /* SwiftyCustomContentButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyCustomContentButton.swift; path = SwiftyButton/SwiftyCustomContentButton.swift; sourceTree = "<group>"; };
 		342F0ED1B0F478B101F42188EB7C25AF /* PureLayout-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-prefix.pch"; sourceTree = "<group>"; };
@@ -178,24 +179,24 @@
 		448313FCB0C93ED5064E0ABF8479B3A0 /* PureLayout.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PureLayout.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		467951529B77A97B65EE60BA4ACF4345 /* PureLayout-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PureLayout-dummy.m"; sourceTree = "<group>"; };
 		4A0344E2AC9A91ECB47535FE07773AAF /* HEXColor.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = HEXColor.h; path = HEXColor/HEXColor.h; sourceTree = "<group>"; };
-		4AB865127C2EE4A6D95466C8F45CABEB /* PayWandModelProtocols.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PayWandModelProtocols.modulemap; sourceTree = "<group>"; };
 		4B179E7B67438055435C28AA1F806EFB /* EasyPeasy.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = EasyPeasy.modulemap; sourceTree = "<group>"; };
+		4D66A02961747E9F0DED571A9E9E77AE /* PayWandBasicElements-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandBasicElements-prefix.pch"; sourceTree = "<group>"; };
 		4E978873855136B75535D8A5439F8F12 /* Priority.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Priority.swift; path = EasyPeasy/Priority.swift; sourceTree = "<group>"; };
-		532E27249381038CACC31A8155EB5FE3 /* ServerDataProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ServerDataProtocols.swift; sourceTree = "<group>"; };
 		5769A739C1BC09C0A99A205533473B46 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		59917F8D9570B4D2745FEC0AB191397A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5B226B415E07BB4E00C8D2D6560993A9 /* Pods-TtroCountryPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-TtroCountryPicker.modulemap"; sourceTree = "<group>"; };
-		5D26574B4FBD241AA2A41DE63BD647DB /* PayWandModelProtocols-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PayWandModelProtocols-dummy.m"; sourceTree = "<group>"; };
 		5FD48D6CE3F5F90CA57A87AE38F246E3 /* Constant.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Constant.swift; path = EasyPeasy/Constant.swift; sourceTree = "<group>"; };
-		646B1760DA71DA9A74B3409021D80F56 /* PayWandModelProtocols-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandModelProtocols-umbrella.h"; sourceTree = "<group>"; };
 		6480C84A3C99FB88F14335BB5A067A42 /* DimensionAttribute+AppKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DimensionAttribute+AppKit.swift"; path = "EasyPeasy/DimensionAttribute+AppKit.swift"; sourceTree = "<group>"; };
 		678DBC5D9B77311B5D772684CD0C26F7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6BB27BC7ED6C53FB340E5077D348D211 /* SwiftyButton.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftyButton.modulemap; sourceTree = "<group>"; };
 		6BFF802CE58F570F2C0C79A1D14B17DB /* Item.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Item.swift; path = EasyPeasy/Item.swift; sourceTree = "<group>"; };
+		6D4149D4B8C9A1C0CD7DE4278ECF951D /* TtroDigitEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroDigitEntry.swift; sourceTree = "<group>"; };
 		6FC98C9B59DAC5F133333539ED3A575E /* PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = PureLayout.h; path = PureLayout/PureLayout/PureLayout.h; sourceTree = "<group>"; };
-		7525B8E0061CC84F7634062B8C300371 /* PayWandBasicElements.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PayWandBasicElements.modulemap; sourceTree = "<group>"; };
+		73305820FA33DE1355EE38109D1671E8 /* PayWandBasicElements.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PayWandBasicElements.xcconfig; sourceTree = "<group>"; };
 		786E9746EFA46BAAF4252F6AE1640BFA /* PayWandBasicElements.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PayWandBasicElements.framework; path = PayWandBasicElements.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A9B9CD36C3FDB6263A5719197040554 /* DimensionAttribute+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "DimensionAttribute+UIKit.swift"; path = "EasyPeasy/DimensionAttribute+UIKit.swift"; sourceTree = "<group>"; };
 		7D199E8630B497C3A6F85870C62D1E91 /* UIColor_Hex_Swift.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = UIColor_Hex_Swift.modulemap; sourceTree = "<group>"; };
+		7DDE4D4BAF5875038707469D8D51BB33 /* TtroLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroLabel.swift; sourceTree = "<group>"; };
 		7FDA84DB2E410BAEBB72A21A25DEF281 /* UIColor_Hex_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = UIColor_Hex_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FEA300A351C70F17D83ED9E1A204C09 /* SwiftyButton.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftyButton.xcconfig; sourceTree = "<group>"; };
 		807D8B0E6F29C19627A5E83B22601D08 /* DimensionAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DimensionAttribute.swift; path = EasyPeasy/DimensionAttribute.swift; sourceTree = "<group>"; };
@@ -207,44 +208,43 @@
 		8E3D8CC23C3AC5779470CCFCC25BF7ED /* UIColor_Hex_Swift-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "UIColor_Hex_Swift-umbrella.h"; sourceTree = "<group>"; };
 		8E5D4651A6F42DB921211F7D58E7CE29 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91231679BC2EFF36F60AA8F0B92C2FA6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		937A0E22FD0FC34B2FAA5EA926C7F9C5 /* PayWandModelProtocols.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PayWandModelProtocols.modulemap; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		946E2FF9004D532D332037E243E88E7C /* Pods-TtroCountryPicker-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-TtroCountryPicker-resources.sh"; sourceTree = "<group>"; };
+		9499C9A7D9C66A23DB5ACA6313D0817B /* CoreDataProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
 		96F8E1C5B35D6641BD62936FAA0891BA /* Pods-TtroCountryPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-TtroCountryPicker-umbrella.h"; sourceTree = "<group>"; };
 		9A9B82A4666AC0783C10B5482F550525 /* Attribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Attribute.swift; path = EasyPeasy/Attribute.swift; sourceTree = "<group>"; };
 		9E112AAA6CBE26B2900D10566F568CD4 /* Pods_TtroCountryPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_TtroCountryPicker.framework; path = "Pods-TtroCountryPicker.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B17975FDB15DF0EC7C0ECF26D5B884 /* PayWandModelProtocols.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = PayWandModelProtocols.framework; path = PayWandModelProtocols.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A28CB664CA0D1FD4C8913F1D4D1747A5 /* PayWandBasicElements.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PayWandBasicElements.xcconfig; sourceTree = "<group>"; };
 		A686346CE2E9EC65BA60FB32D4E57F9B /* EasyPeasy-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "EasyPeasy-umbrella.h"; sourceTree = "<group>"; };
 		AB2AF3219A55DFF79A833A6CD71A6705 /* SwiftyButton-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftyButton-dummy.m"; sourceTree = "<group>"; };
 		AB751A40F5BC066359E4C00068721787 /* ALView+PureLayout.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "ALView+PureLayout.h"; path = "PureLayout/PureLayout/ALView+PureLayout.h"; sourceTree = "<group>"; };
 		ABA811D27DA03F4841B168A1A43DB290 /* NSView+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSView+Easy.swift"; path = "EasyPeasy/NSView+Easy.swift"; sourceTree = "<group>"; };
 		AEA92B83CD3D32B0FD5DF2A7CE3143CF /* PureLayout-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PureLayout-umbrella.h"; sourceTree = "<group>"; };
 		AEBF92BC71693E6E968F5D20E6139470 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF7770AA42B0728886DE9AD258978FDD /* PayWandModelProtocols-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "PayWandModelProtocols-dummy.m"; sourceTree = "<group>"; };
 		B11E6B31A3C3C00BF6D2F3AE2B21FCFB /* SwiftyButton-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyButton-prefix.pch"; sourceTree = "<group>"; };
 		B9D8900F985FB236D35F5A528AC23453 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		BCA3D51F25DB2CCE8C22092165C508B4 /* SwiftyButton.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftyButton.framework; path = SwiftyButton.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C10A34F82B36DE560A8406B65BF6D99C /* NSLayoutGuide+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "NSLayoutGuide+Easy.swift"; path = "EasyPeasy/NSLayoutGuide+Easy.swift"; sourceTree = "<group>"; };
 		C2EE8B61A93DE06D0C28D56D45E16A30 /* Item+UIKit.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "Item+UIKit.swift"; path = "EasyPeasy/Item+UIKit.swift"; sourceTree = "<group>"; };
+		C53124114EFB9A64250A1A51B66DB7D6 /* PayWandBasicElements-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandBasicElements-umbrella.h"; sourceTree = "<group>"; };
 		C87F2729EF0F4119520142499987156E /* UILayoutGuide+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UILayoutGuide+Easy.swift"; path = "EasyPeasy/UILayoutGuide+Easy.swift"; sourceTree = "<group>"; };
 		C91855254A19FB7ACBB2A5CDDA0D4B06 /* Pods-TtroCountryPicker.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TtroCountryPicker.release.xcconfig"; sourceTree = "<group>"; };
 		C96D33E5ABE6C02B086F2E95B5B25720 /* UIColor_Hex_Swift.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = UIColor_Hex_Swift.xcconfig; sourceTree = "<group>"; };
 		CA8CE1B502B7AE94D67D33F64750272B /* SwiftyButton-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftyButton-umbrella.h"; sourceTree = "<group>"; };
-		CBAF8AA71EE4AFF1955F9CD48143FF48 /* PayWandModelProtocols.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PayWandModelProtocols.xcconfig; sourceTree = "<group>"; };
 		CBC0A5099DF83522CC488AA867496DDA /* PureLayout.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = PureLayout.xcconfig; sourceTree = "<group>"; };
 		CE663E4B5C2A5D515F27E78F56619B3C /* CompoundAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CompoundAttribute.swift; path = EasyPeasy/CompoundAttribute.swift; sourceTree = "<group>"; };
-		D58973B5CF6AC1DBEB793872A50BF8EE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7E116B0239CAD2878692681E85B2596 /* TtroTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroTextField.swift; sourceTree = "<group>"; };
 		D91104ECD21A7A3061C7C9DDC6D610B4 /* EasyPeasy.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = EasyPeasy.xcconfig; sourceTree = "<group>"; };
 		DD05720258997143EC5AADDD36F7CE0F /* PureLayout+Internal.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "PureLayout+Internal.h"; path = "PureLayout/PureLayout/PureLayout+Internal.h"; sourceTree = "<group>"; };
 		E0DE5C57D61DD8562A13CA02191CE1FD /* UIColor_Hex_Swift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = UIColor_Hex_Swift.framework; path = UIColor_Hex_Swift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E168BDBE95683389A33D2115AC056534 /* TtroButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroButton.swift; sourceTree = "<group>"; };
-		EA02DF384CB48624880994B31510286D /* TtroLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroLabel.swift; sourceTree = "<group>"; };
-		EC57163C7AD293EA645603F4221D7BE3 /* TtroDigitEntry.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TtroDigitEntry.swift; sourceTree = "<group>"; };
+		E4DA1D6DC291B7CC051E5FB52929F50F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6EC0A01BEC3B8FA26DBFD5313851273 /* PayWandModelProtocols-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandModelProtocols-prefix.pch"; sourceTree = "<group>"; };
 		F03EC910C4A924E9D0B80BABBD497B81 /* NSArray+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+PureLayout.m"; path = "PureLayout/PureLayout/NSArray+PureLayout.m"; sourceTree = "<group>"; };
 		F2556DFDDEE935120FC39A07BB4DF3EA /* UIView+Easy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIView+Easy.swift"; path = "EasyPeasy/UIView+Easy.swift"; sourceTree = "<group>"; };
-		F2F7A03397F68031808D81F16D5AAFDC /* CoreDataProtocols.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CoreDataProtocols.swift; sourceTree = "<group>"; };
+		F310418C7887A7E22FEE28DDED2864C3 /* PayWandBasicElements.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = PayWandBasicElements.modulemap; sourceTree = "<group>"; };
 		F4B92E1437A74D33EB96F388D3096ED8 /* Pods-TtroCountryPicker.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-TtroCountryPicker.debug.xcconfig"; sourceTree = "<group>"; };
-		F742F07F79060D517BE2AA7D29492DC7 /* PayWandModelProtocols-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandModelProtocols-prefix.pch"; sourceTree = "<group>"; };
-		F862F4B0A3E866BE17086BC464F71A8A /* PayWandBasicElements-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "PayWandBasicElements-umbrella.h"; sourceTree = "<group>"; };
 		F991D62C0A9AC9BB8E05DD809A8F7775 /* Node.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Node.swift; path = EasyPeasy/Node.swift; sourceTree = "<group>"; };
 		FCE82743A329FC0E4CD0AD38ABE5DFF5 /* PositionAttribute.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PositionAttribute.swift; path = EasyPeasy/PositionAttribute.swift; sourceTree = "<group>"; };
 		FD05C2618272817579DE214A194A6D49 /* NSLayoutConstraint+PureLayout.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSLayoutConstraint+PureLayout.m"; path = "PureLayout/PureLayout/NSLayoutConstraint+PureLayout.m"; sourceTree = "<group>"; };
@@ -319,15 +319,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		17DBEAF8BFEE428E0B36C6783015E93A /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				2F05E6F850848AB362289F99A73C9893 /* PayWandBasicElements */,
-				561058AEC0A66651FC0E0D42A46B168D /* PayWandModelProtocols */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
 		1A996663B77C7D30FEA4F1D920652F06 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -337,28 +328,18 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		25DE7EA65610F65FC7A3299BC6BAE418 /* Support Files */ = {
+		27BE3534C10E4C2DD77409588B6ECF8C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				D58973B5CF6AC1DBEB793872A50BF8EE /* Info.plist */,
-				7525B8E0061CC84F7634062B8C300371 /* PayWandBasicElements.modulemap */,
-				A28CB664CA0D1FD4C8913F1D4D1747A5 /* PayWandBasicElements.xcconfig */,
-				2EC4779F2BC886B700CE7883BBF6364E /* PayWandBasicElements-dummy.m */,
-				2414CF450247A9D7885B626351150353 /* PayWandBasicElements-prefix.pch */,
-				F862F4B0A3E866BE17086BC464F71A8A /* PayWandBasicElements-umbrella.h */,
+				E4DA1D6DC291B7CC051E5FB52929F50F /* Info.plist */,
+				F310418C7887A7E22FEE28DDED2864C3 /* PayWandBasicElements.modulemap */,
+				73305820FA33DE1355EE38109D1671E8 /* PayWandBasicElements.xcconfig */,
+				2812F417BF30FCB0CB68AEDB0B93B50A /* PayWandBasicElements-dummy.m */,
+				4D66A02961747E9F0DED571A9E9E77AE /* PayWandBasicElements-prefix.pch */,
+				C53124114EFB9A64250A1A51B66DB7D6 /* PayWandBasicElements-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../TtroCountryPicker/Pods/Target Support Files/PayWandBasicElements";
-			sourceTree = "<group>";
-		};
-		2F05E6F850848AB362289F99A73C9893 /* PayWandBasicElements */ = {
-			isa = PBXGroup;
-			children = (
-				4661514A57F92C4E7D7D28A418800008 /* PayWandBasicElements */,
-				25DE7EA65610F65FC7A3299BC6BAE418 /* Support Files */,
-			);
-			name = PayWandBasicElements;
-			path = ../../PayWandBasicElements;
 			sourceTree = "<group>";
 		};
 		32FC4C9B61F9F6A41A03752AAF0CDFC6 /* Frameworks */ = {
@@ -373,27 +354,23 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		4661514A57F92C4E7D7D28A418800008 /* PayWandBasicElements */ = {
+		462B4393E76B6852EDF544B43F2513EC /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				012105A723F65DBC5B2A6EE37FD2D221 /* Extensions.swift */,
-				E168BDBE95683389A33D2115AC056534 /* TtroButton.swift */,
-				EC57163C7AD293EA645603F4221D7BE3 /* TtroDigitEntry.swift */,
-				EA02DF384CB48624880994B31510286D /* TtroLabel.swift */,
-				0AD10BBB14BDA524C8FCC8DD1BD4FCD5 /* TtroTextField.swift */,
+				4DB5E511738297B3A4790B2527904130 /* PayWandBasicElements */,
+				93F67A88191FBB2802804739A8B766E3 /* PayWandModelProtocols */,
 			);
-			name = PayWandBasicElements;
-			path = PayWandBasicElements;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
-		561058AEC0A66651FC0E0D42A46B168D /* PayWandModelProtocols */ = {
+		4DB5E511738297B3A4790B2527904130 /* PayWandBasicElements */ = {
 			isa = PBXGroup;
 			children = (
-				8F3E8632239FAB52C470450C23580B7E /* PayWandModelProtocols */,
-				99D8181122E5D3E0E097726CEECF835D /* Support Files */,
+				A74C658F805287C1C4B066D1AA9D8A16 /* PayWandBasicElements */,
+				27BE3534C10E4C2DD77409588B6ECF8C /* Support Files */,
 			);
-			name = PayWandModelProtocols;
-			path = ../../PayWandModelProtocols/PayWandModelProtocols;
+			name = PayWandBasicElements;
+			path = ../../PayWandBasicElements;
 			sourceTree = "<group>";
 		};
 		6164D154385FDCF929F4D6370CEEBBB1 /* PureLayout */ = {
@@ -471,12 +448,26 @@
 			isa = PBXGroup;
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
-				17DBEAF8BFEE428E0B36C6783015E93A /* Development Pods */,
+				462B4393E76B6852EDF544B43F2513EC /* Development Pods */,
 				32FC4C9B61F9F6A41A03752AAF0CDFC6 /* Frameworks */,
 				6A8E29F258A0ED6FC371E5C81B82F368 /* Pods */,
 				745933A0348E7AD61B277AEC3C1CFB7B /* Products */,
 				D1654C5AE80BAA359A5957B7AD2C9810 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		8360BC9231BE7B323F9923606709CB48 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				59917F8D9570B4D2745FEC0AB191397A /* Info.plist */,
+				937A0E22FD0FC34B2FAA5EA926C7F9C5 /* PayWandModelProtocols.modulemap */,
+				11770872620289C3925AB89B203F3BD9 /* PayWandModelProtocols.xcconfig */,
+				AF7770AA42B0728886DE9AD258978FDD /* PayWandModelProtocols-dummy.m */,
+				E6EC0A01BEC3B8FA26DBFD5313851273 /* PayWandModelProtocols-prefix.pch */,
+				26B3B2FF175C7BC72F1F21A61DD58C09 /* PayWandModelProtocols-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../TtroCountryPicker/Pods/Target Support Files/PayWandModelProtocols";
 			sourceTree = "<group>";
 		};
 		881970111ABBC9FFA9B410A52823445F /* Support Files */ = {
@@ -493,14 +484,24 @@
 			path = "../Target Support Files/EasyPeasy";
 			sourceTree = "<group>";
 		};
-		8F3E8632239FAB52C470450C23580B7E /* PayWandModelProtocols */ = {
+		8DC4493B4C8EC196B07DC30CAC05DCA3 /* PayWandModelProtocols */ = {
 			isa = PBXGroup;
 			children = (
-				F2F7A03397F68031808D81F16D5AAFDC /* CoreDataProtocols.swift */,
-				532E27249381038CACC31A8155EB5FE3 /* ServerDataProtocols.swift */,
+				9499C9A7D9C66A23DB5ACA6313D0817B /* CoreDataProtocols.swift */,
+				064240FA07C11966DCA9F4C4580488C6 /* ServerDataProtocols.swift */,
 			);
 			name = PayWandModelProtocols;
 			path = PayWandModelProtocols;
+			sourceTree = "<group>";
+		};
+		93F67A88191FBB2802804739A8B766E3 /* PayWandModelProtocols */ = {
+			isa = PBXGroup;
+			children = (
+				8DC4493B4C8EC196B07DC30CAC05DCA3 /* PayWandModelProtocols */,
+				8360BC9231BE7B323F9923606709CB48 /* Support Files */,
+			);
+			name = PayWandModelProtocols;
+			path = ../../PayWandModelProtocols;
 			sourceTree = "<group>";
 		};
 		95F88AE6D086DDA82FC3C9B337836BAE /* SwiftyButton */ = {
@@ -515,18 +516,17 @@
 			path = SwiftyButton;
 			sourceTree = "<group>";
 		};
-		99D8181122E5D3E0E097726CEECF835D /* Support Files */ = {
+		A74C658F805287C1C4B066D1AA9D8A16 /* PayWandBasicElements */ = {
 			isa = PBXGroup;
 			children = (
-				3113C0FBF5A3FF9AD2D6D80180E08219 /* Info.plist */,
-				4AB865127C2EE4A6D95466C8F45CABEB /* PayWandModelProtocols.modulemap */,
-				CBAF8AA71EE4AFF1955F9CD48143FF48 /* PayWandModelProtocols.xcconfig */,
-				5D26574B4FBD241AA2A41DE63BD647DB /* PayWandModelProtocols-dummy.m */,
-				F742F07F79060D517BE2AA7D29492DC7 /* PayWandModelProtocols-prefix.pch */,
-				646B1760DA71DA9A74B3409021D80F56 /* PayWandModelProtocols-umbrella.h */,
+				0F99B7430FCFDB436F1134B87A615FF0 /* Extensions.swift */,
+				0FB9DEC376D317FEE4B4CD54697E9DBC /* TtroButton.swift */,
+				6D4149D4B8C9A1C0CD7DE4278ECF951D /* TtroDigitEntry.swift */,
+				7DDE4D4BAF5875038707469D8D51BB33 /* TtroLabel.swift */,
+				D7E116B0239CAD2878692681E85B2596 /* TtroTextField.swift */,
 			);
-			name = "Support Files";
-			path = "../../TtroCountryPicker/Pods/Target Support Files/PayWandModelProtocols";
+			name = PayWandBasicElements;
+			path = PayWandBasicElements;
 			sourceTree = "<group>";
 		};
 		AC3B06CAB9D861237E0FDD7EEF92FCB3 /* Pods-TtroCountryPicker */ = {
@@ -1173,7 +1173,7 @@
 		};
 		4A3E5AA256463C9144C7B7D64E2F8BC9 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBAF8AA71EE4AFF1955F9CD48143FF48 /* PayWandModelProtocols.xcconfig */;
+			baseConfigurationReference = 11770872620289C3925AB89B203F3BD9 /* PayWandModelProtocols.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1271,7 +1271,7 @@
 		};
 		6B194D3AD813219CAB7B5C675C1C0B87 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CBAF8AA71EE4AFF1955F9CD48143FF48 /* PayWandModelProtocols.xcconfig */;
+			baseConfigurationReference = 11770872620289C3925AB89B203F3BD9 /* PayWandModelProtocols.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1303,7 +1303,7 @@
 		};
 		81CADD9BB488B2F065DC6BF2B5998499 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A28CB664CA0D1FD4C8913F1D4D1747A5 /* PayWandBasicElements.xcconfig */;
+			baseConfigurationReference = 73305820FA33DE1355EE38109D1671E8 /* PayWandBasicElements.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1445,7 +1445,7 @@
 		};
 		CAEB06EACAE54188DD4A2592853B444E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A28CB664CA0D1FD4C8913F1D4D1747A5 /* PayWandBasicElements.xcconfig */;
+			baseConfigurationReference = 73305820FA33DE1355EE38109D1671E8 /* PayWandBasicElements.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

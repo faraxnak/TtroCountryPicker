@@ -12,7 +12,7 @@
   "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
     "8D2D75E1AA0E181F828F2ED5900FC3876DB45392" : "PayWandBasicElements\/",
     "111E8A66FE1FBB59006D8F3CDCEFD728CC808096" : "TtroCountryPicker\/",
-    "DF86B076DBA3260E4C12EB256924FB55A8A75041" : "PayWandModelProtocols\/PayWandModelProtocols\/"
+    "DF86B076DBA3260E4C12EB256924FB55A8A75041" : "PayWandModelProtocols\/"
   },
   "DVTSourceControlWorkspaceBlueprintNameKey" : "TtroCountryPicker",
   "DVTSourceControlWorkspaceBlueprintVersion" : 204,

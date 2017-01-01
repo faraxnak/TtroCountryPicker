@@ -20,6 +20,8 @@ import PayWandBasicElements
     
     @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithInfo country: Country)
     
+    func countryPicker(setInfoType picker: MICountryPicker) -> MICountryPicker.InfoType
+    
 }
 
 public protocol MICountryPickerDataSource : class {
@@ -75,7 +77,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     fileprivate var searchController: UISearchController!
     //fileprivate let collation = UILocalizedIndexedCollation.current() as UILocalizedIndexedCollation
     public weak var pickerDelegate: MICountryPickerDelegate?
-    open weak var coreDataSource : MICountryPickerDataSource!
+    open weak var pickerDataSource : MICountryPickerDataSource!
 //    open weak var serverDataSource : MICountryPickerServerDataSource!
     
     open var didSelectCountryClosure: ((String, String) -> ())?
@@ -86,7 +88,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     
 //    fileprivate var exchangeRatesUSDBased = [String : Double]()
     
-    public enum InfoType {
+    @objc public enum InfoType : Int {
         case currecny, phoneCode, isoCode
     }
     
@@ -108,6 +110,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.TtroColors.white.color
         self.tableView.separatorStyle = .none
+        infoType = pickerDelegate?.countryPicker(setInfoType: self) ?? .currecny
         performFetch()
     }
     
@@ -132,7 +135,14 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     fileprivate func createSearchBar() {
         if self.tableView.tableHeaderView == nil {
             searchController = UISearchController(searchResultsController: nil)
-            searchController.searchBar.scopeButtonTitles = ["Name", "Phone code"]
+            switch infoType {
+            case .currecny:
+                searchController.searchBar.scopeButtonTitles = ["Name", "Currency"]
+            case .phoneCode:
+                searchController.searchBar.scopeButtonTitles = ["Name", "Phone code"]
+            case .isoCode:
+                searchController.searchBar.scopeButtonTitles = ["Name", "ISO code"]
+            }
             searchController.searchResultsUpdater = self
             searchController.searchBar.delegate = self
             searchController.dimsBackgroundDuringPresentation = false
@@ -170,28 +180,30 @@ extension MICountryPicker {
         return cell
     }
     
-    func configureCell(cell: CountryTableViewCell, indexPath: IndexPath) {
-        
+    func configureCell(cell: CountryTableViewCell?, indexPath: IndexPath) {
+        if (cell == nil){
+            return
+        }
         do {
             let country = Country() //try fetchedResultsController.object(at: indexPath) as! CountryMO
             //let bundle = "flags.bundle/"
-            coreDataSource.country(country, result:  fetchedResultsController.object(at: indexPath))
+            pickerDataSource.country(country, result:  fetchedResultsController.object(at: indexPath))
             
             if let filePath = Bundle(for: MICountryPicker.self).path(forResource: "/flags.bundle/" + country.code.lowercased(), ofType: "png"){
-                cell.flagImageView.image = UIImage(contentsOfFile: filePath)
+                cell?.flagImageView.image = UIImage(contentsOfFile: filePath)
             } else {
                 // put general flag image instead of coutries flag
             }
             
-            cell.nameLabel.text = country.name
+            cell?.nameLabel.text = country.name
             
             switch infoType {
             case .currecny:
-                cell.infoLabel.text = country.currency
+                cell?.infoLabel.text = country.currency
             case .phoneCode:
-                cell.infoLabel.text = country.phoneCode
+                cell?.infoLabel.text = country.phoneCode
             case .isoCode:
-                cell.infoLabel.text = country.code
+                cell?.infoLabel.text = country.code
             }
         } catch {
             print(error)
@@ -221,7 +233,7 @@ extension MICountryPicker {
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let country = Country()
-        coreDataSource.country(country, result: fetchedResultsController.object(at: indexPath))
+        pickerDataSource.country(country, result: fetchedResultsController.object(at: indexPath))
         
         searchController.view.endEditing(false)
         let cell = tableView.cellForRow(at: indexPath) as! CountryTableViewCell
@@ -243,13 +255,20 @@ extension MICountryPicker: UISearchResultsUpdating {
         if (searchController.searchBar.text != lastSearch){
             lastSearch = searchController.searchBar.text!
             let country = Country()
-            if (searchController.searchBar.selectedScopeButtonIndex == 1 && Int(searchController.searchBar.text!) != nil) {
-                country.phoneCode = searchController.searchBar.text!
-                coreDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
+            if (searchController.searchBar.selectedScopeButtonIndex == 1) {
+                switch infoType {
+                case .currecny:
+                    country.currency = searchController.searchBar.text!
+                case .isoCode:
+                    country.code = searchController.searchBar.text!
+                case .phoneCode:
+                    country.phoneCode = searchController.searchBar.text!
+                }
+                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
                 //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "phoneCode beginswith %@", searchController.searchBar.text!)
             } else if (searchController.searchBar.selectedScopeButtonIndex == 0 && searchController.searchBar.text != ""){
                 country.name = searchController.searchBar.text
-                coreDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
+                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
                 //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "name contains[cd] %@", searchController.searchBar.text!)
             } else {
                 self.fetchedResultsController.fetchRequest.predicate = nil
@@ -270,6 +289,8 @@ extension MICountryPicker {
         } else {
             searchBar.keyboardType = .namePhonePad
         }
+        self.fetchedResultsController.fetchRequest.predicate = nil
+        performFetch()
     }
     
 }
@@ -281,9 +302,9 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
     func performFetch() {
         if (fetchedResultsController == nil){
             
-            fetchedResultsController = coreDataSource.createFetchedResultsController()
+            fetchedResultsController = pickerDataSource.createFetchedResultsController()
             fetchedResultsController.delegate = self
-            coreDataSource.countryPicker(refreshCountries: self)
+            pickerDataSource.countryPicker(refreshCountries: self)
         }
         do {
             try fetchedResultsController.performFetch()
@@ -336,7 +357,7 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
         case .delete:
             tableView.deleteRows(at: [indexPath!], with: .fade)
         case .update:
-            configureCell(cell: tableView.cellForRow(at: indexPath!) as! CountryTableViewCell, indexPath: indexPath!)
+            configureCell(cell: tableView.cellForRow(at: indexPath!) as? CountryTableViewCell, indexPath: indexPath!)
         case .move:
             tableView.moveRow(at: indexPath!, to: newIndexPath!)
         }

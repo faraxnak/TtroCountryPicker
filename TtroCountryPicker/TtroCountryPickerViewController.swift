@@ -12,7 +12,7 @@ public class TtroCountryPickerViewController: UINavigationController {
 
     
     public var pickerDelegate : MICountryPickerDelegate!
-    public var coreDataSource : MICountryPickerDataSource!
+    public var pickerDataSource : MICountryPickerDataSource!
 //    public var serverDataSource : MICountryPickerServerDataSource!
     
     let countryPicker = MICountryPicker(completionHandler: nil)
@@ -35,7 +35,7 @@ public class TtroCountryPickerViewController: UINavigationController {
         super.viewDidLoad()
 
         countryPicker.pickerDelegate = self.pickerDelegate
-        countryPicker.coreDataSource = self.coreDataSource
+        countryPicker.pickerDataSource = self.pickerDataSource
 //        countryPicker.serverDataSource = self.serverDataSource
 //        countryPicker.checkCountryList()
         // Do any additional setup after loading the view.
