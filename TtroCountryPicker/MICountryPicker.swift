@@ -18,7 +18,7 @@ import PayWandBasicElements
     @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithName name: String, id: Int, dialCode: String)
     @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithName name: String, id: Int, dialCode: String?, currency : String?, flag : UIImage?)
     
-    @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithInfo country: Country)
+    @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithInfo country: CountryP)
     
     func countryPicker(setInfoType picker: MICountryPicker) -> MICountryPicker.InfoType
     
@@ -26,11 +26,12 @@ import PayWandBasicElements
 
 public protocol MICountryPickerDataSource : class {
     
-    func country(_ country : CountryProtocol, result : NSFetchRequestResult)
+    func country(countryWithNSFRResult result : NSFetchRequestResult) -> CountryP
     
     func createFetchedResultsController() -> NSFetchedResultsController<NSFetchRequestResult>
     
-    func setFRCPredicate(countryFRC fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, countryInfo : CountryProtocol)
+//    func setFRCPredicate(countryFRC fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, countryInfo : CountryP)
+    func setFRCPredicate(countryFRC fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, name: String? ,isoCode : String?, phoneCode : String?, currency : String?)
     
 //    func countryPicker(addCountries countryNames: [String : String],
 //                       countryCurrencies : [String: String])
@@ -57,17 +58,48 @@ public protocol MICountryPickerDataSource : class {
 //    var currency : String? {get set}
 //}
 
-public class Country: NSObject, CountryProtocol {
-    
-    public var id: NSNumber!
-    public var name: String!
-    public var phoneCode: String!
-    public var code : String!
-    public var currency : String!
-    
-    public var flag : UIImage?
-    public var exchangeRate : Double = 0
-}
+//public class Country: NSObject, CountryProtocol {
+//    public static func fetch(id: NSNumber?, name: String?, code: String?) -> CountryProtocol? {
+//        return Country()
+//    }
+//
+//    public func updateServer(onFinish: () -> ()) {
+//        
+//    }
+//
+//    public func reloadFromServer(onFinish: () -> ()) {
+//        
+//    }
+//    
+//    public static func fetch(params : DataProtocol) -> DataProtocol{
+//        return Country()
+//    }
+//    
+//    public static func fetchAll() -> [DataProtocol]{
+//        return [Country()]
+//    }
+//    
+//    public func store(){
+//        
+//    }
+//    
+//    public required init(coreDataObject : NSManagedObject){
+//        Country()
+//    }
+//
+//    public override init() {
+//        
+//    }
+//    
+//    public var id: NSNumber!
+//    public var name: String!
+//    public var phoneCode: String!
+//    public var code : String!
+//    public var currency : String!
+//    
+//    public var flag : UIImage?
+//    public var exchangeRate : Double = 0
+//}
 
 public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     fileprivate let countryPickerCell = "countryTableViewCell"
@@ -185,14 +217,16 @@ extension MICountryPicker {
             return
         }
         do {
-            let country = Country() //try fetchedResultsController.object(at: indexPath) as! CountryMO
-            //let bundle = "flags.bundle/"
-            pickerDataSource.country(country, result:  fetchedResultsController.object(at: indexPath))
+//            let country = Country() //try fetchedResultsController.object(at: indexPath) as! CountryMO
+//            let bundle = "flags.bundle/"
+            let country = pickerDataSource.country(countryWithNSFRResult: fetchedResultsController.object(at: indexPath))
             
-            if let filePath = Bundle(for: MICountryPicker.self).path(forResource: "/flags.bundle/" + country.code.lowercased(), ofType: "png"){
-                cell?.flagImageView.image = UIImage(contentsOfFile: filePath)
-            } else {
-                // put general flag image instead of coutries flag
+            if let code = country.code {
+                if let filePath = Bundle(for: MICountryPicker.self).path(forResource: "/flags.bundle/" + code.lowercased(), ofType: "png"){
+                    cell?.flagImageView.image = UIImage(contentsOfFile: filePath)
+                } else {
+                    // put general flag image instead of coutries flag
+                }
             }
             
             cell?.nameLabel.text = country.name
@@ -232,17 +266,19 @@ extension MICountryPicker {
     
     override open func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let country = Country()
-        pickerDataSource.country(country, result: fetchedResultsController.object(at: indexPath))
+        //let country = Country()
+        //pickerDataSource.country(country, result: fetchedResultsController.object(at: indexPath))
+        let country = pickerDataSource.country(countryWithNSFRResult: fetchedResultsController.object(at: indexPath))
+        
         
         searchController.view.endEditing(false)
         let cell = tableView.cellForRow(at: indexPath) as! CountryTableViewCell
-        country.flag = cell.flagImageView.image
-        //delegate?.countryPicker(self, didSelectCountryWithName: country.name!, code: country.code)
-        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id.intValue, dialCode: country.phoneCode)
-        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: Int(country.id), dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
+        //country.flag = cell.flagImageView.image
+        
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id!.intValue, dialCode: country.phoneCode!)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: Int(country.id!), dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
         pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country)
-        didSelectCountryClosure?(country.name!, country.phoneCode)
+        didSelectCountryClosure?(country.name!, country.phoneCode!)
         //didSelectCountryWithCallingCodeClosure?(country.name!, country.code, country.phoneCode)
     }
 }
@@ -254,22 +290,18 @@ extension MICountryPicker: UISearchResultsUpdating {
     public func updateSearchResults(for searchController: UISearchController) {
         if (searchController.searchBar.text != lastSearch){
             lastSearch = searchController.searchBar.text!
-            let country = Country()
             if (searchController.searchBar.selectedScopeButtonIndex == 1) {
                 switch infoType {
                 case .currecny:
-                    country.currency = searchController.searchBar.text!
+                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: nil, currency: searchController.searchBar.text)
                 case .isoCode:
-                    country.code = searchController.searchBar.text!
+                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: searchController.searchBar.text, phoneCode: nil, currency: nil)
                 case .phoneCode:
-                    country.phoneCode = searchController.searchBar.text!
+                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: searchController.searchBar.text, currency: nil)
                 }
-                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
                 //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "phoneCode beginswith %@", searchController.searchBar.text!)
             } else if (searchController.searchBar.selectedScopeButtonIndex == 0 && searchController.searchBar.text != ""){
-                country.name = searchController.searchBar.text
-                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, countryInfo: country)
-                //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "name contains[cd] %@", searchController.searchBar.text!)
+                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name: searchController.searchBar.text, isoCode: nil, phoneCode: nil, currency: nil)
             } else {
                 self.fetchedResultsController.fetchRequest.predicate = nil
                 
