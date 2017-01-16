@@ -275,8 +275,8 @@ extension MICountryPicker {
         let cell = tableView.cellForRow(at: indexPath) as! CountryTableViewCell
         //country.flag = cell.flagImageView.image
         
-        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id!.intValue, dialCode: country.phoneCode!)
-        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: Int(country.id!), dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode!)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
         pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country)
         didSelectCountryClosure?(country.name!, country.phoneCode!)
         //didSelectCountryWithCallingCodeClosure?(country.name!, country.code, country.phoneCode)
