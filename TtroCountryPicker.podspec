@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 
   s.name         = "TtroCountryPicker"
   s.version      = "0.0.2"
-  s.summary      = "TtroCountryPicker based on MICountryPicker."
+  s.summary      = "Country picker"
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |s|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   s.description  = <<-DESC
-  TtroCountryPicker based on MICountryPicker. Works by calling delegates from serverConnection to get country names and DataController to reach core data.
+  country picker based on a pod by someone else
                    DESC
 
   s.homepage     = "https://github.com/faraxnak/TtroCountryPicker"
@@ -53,9 +53,9 @@ Pod::Spec.new do |s|
   #  profile URL.
   #
 
-  s.author             = { "faraxnak" => "" }
+  s.author             = { "faraxnak" => "email@address.com" }
   # Or just: s.author    = "faraxnak"
-  # s.authors            = { "faraxnak" => "" }
+  # s.authors            = { "faraxnak" => "email@address.com" }
   # s.social_media_url   = "http://twitter.com/faraxnak"
 
   # ――― Platform Specifics ――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "9.0"
+  s.platform     = :ios, "10.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -91,8 +91,8 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "TtroCountryPicker/**/*.{swift}"
-  s.exclude_files = "Classes/Exclude"
+  s.source_files  = "TtroCountryPicker"
+  s.exclude_files = "TtroCountryPickerSample"
 
   # s.public_header_files = "Classes/**/*.h"
 
@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  s.resources = "TtroCountryPicker/Resources/*.bundle"
+  # s.resources = "Resources/*.png"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -133,9 +133,11 @@ Pod::Spec.new do |s|
   # s.requires_arc = true
 
   # s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
-  s.dependency 'EasyPeasy'
-  s.dependency 'UIColor_Hex_Swift'
-  s.dependency 'PayWandBasicElements'
-  s.dependency 'PayWandModelProtocols'
+  # s.dependency "JSONKit", "~> 1.4"
+
+s.dependency 'EasyPeasy', '~> 1.4'
+s.dependency 'UIColor_Hex_Swift', '~> 3.0'
+s.dependency 'PayWandModelProtocols'
+s.dependency 'PayWandBasicElements'
 
 end
