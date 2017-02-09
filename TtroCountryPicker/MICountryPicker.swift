@@ -152,7 +152,7 @@ extension MICountryPicker {
         if (cell == nil){
             return
         }
-        do {
+//        do {
 //            let country = Country() //try fetchedResultsController.object(at: indexPath) as! CountryMO
 //            let bundle = "flags.bundle/"
             let country = pickerDataSource.country(countryWithNSFRResult: fetchedResultsController.object(at: indexPath))
@@ -175,9 +175,9 @@ extension MICountryPicker {
             case .isoCode:
                 cell?.infoLabel.text = country.code
             }
-        } catch {
-            print(error)
-        }
+//        } catch {
+//            print(error)
+//        }
     }
     
     override open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
