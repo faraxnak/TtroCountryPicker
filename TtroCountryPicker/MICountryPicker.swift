@@ -19,6 +19,7 @@ import PayWandBasicElements
     @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithName name: String, id: Int, dialCode: String?, currency : String?, flag : UIImage?)
     
     @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithInfo country: CountryP)
+    @objc optional func countryPicker(_ picker: MICountryPicker, didSelectCountryWithName country: CountryP, flag : UIImage?)
     
     func countryPicker(setInfoType picker: MICountryPicker) -> MICountryPicker.InfoType
     
@@ -30,76 +31,11 @@ public protocol MICountryPickerDataSource : class {
     
     func createFetchedResultsController() -> NSFetchedResultsController<NSFetchRequestResult>
     
-//    func setFRCPredicate(countryFRC fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, countryInfo : CountryP)
     func setFRCPredicate(countryFRC fetchedResultsController: NSFetchedResultsController<NSFetchRequestResult>, name: String? ,isoCode : String?, phoneCode : String?, currency : String?)
     
-//    func countryPicker(addCountries countryNames: [String : String],
-//                       countryCurrencies : [String: String])
-    
     func countryPicker(refreshCountries picker : MICountryPicker)
-    //func countryPicker(numberOfCountries picker: MICountryPicker) -> Int
     
 }
-
-//public protocol MICountryPickerServerDataSource : class {
-//    func countryPicker(_ picker : MICountryPicker, getCountriesName callback: @escaping ([String: String]) -> ())
-//    
-//    func countryPicker(_ picker : MICountryPicker, getCountriesPhone callback: @escaping ([String: String]) -> ())
-//    
-//    func countryPicker(_ picker : MICountryPicker, getCountriesCurrency callback: @escaping ([String: String]) -> ())
-//}
-
-//@objc public protocol CountryProtocol {
-//    
-//    var name: String {get set}
-//    var id: NSNumber {get set}
-//    var phoneCode: String? {get set}
-//    var code : String {get set}
-//    var currency : String? {get set}
-//}
-
-//public class Country: NSObject, CountryProtocol {
-//    public static func fetch(id: NSNumber?, name: String?, code: String?) -> CountryProtocol? {
-//        return Country()
-//    }
-//
-//    public func updateServer(onFinish: () -> ()) {
-//        
-//    }
-//
-//    public func reloadFromServer(onFinish: () -> ()) {
-//        
-//    }
-//    
-//    public static func fetch(params : DataProtocol) -> DataProtocol{
-//        return Country()
-//    }
-//    
-//    public static func fetchAll() -> [DataProtocol]{
-//        return [Country()]
-//    }
-//    
-//    public func store(){
-//        
-//    }
-//    
-//    public required init(coreDataObject : NSManagedObject){
-//        Country()
-//    }
-//
-//    public override init() {
-//        
-//    }
-//    
-//    public var id: NSNumber!
-//    public var name: String!
-//    public var phoneCode: String!
-//    public var code : String!
-//    public var currency : String!
-//    
-//    public var flag : UIImage?
-//    public var exchangeRate : Double = 0
-//}
 
 public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     fileprivate let countryPickerCell = "countryTableViewCell"
@@ -278,6 +214,8 @@ extension MICountryPicker {
         pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode!)
         pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
         pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country, flag: cell.flagImageView.image)
+        //pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country, flag : cell.flagImageView.image)
         didSelectCountryClosure?(country.name!, country.phoneCode!)
         //didSelectCountryWithCallingCodeClosure?(country.name!, country.code, country.phoneCode)
     }
