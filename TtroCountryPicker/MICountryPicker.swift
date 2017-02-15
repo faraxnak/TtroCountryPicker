@@ -169,7 +169,7 @@ extension MICountryPicker {
             
             switch infoType {
             case .currecny:
-                cell?.infoLabel.text = country.currency
+                cell?.infoLabel.text = country.currency?.title
             case .phoneCode:
                 cell?.infoLabel.text = country.phoneCode
             case .isoCode:
@@ -212,7 +212,7 @@ extension MICountryPicker {
         //country.flag = cell.flagImageView.image
         
         pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode!)
-        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode, currency: country.currency, flag: cell.flagImageView.image)
+        pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country.name!, id: country.id, dialCode: country.phoneCode, currency: country.currency!.title!, flag: cell.flagImageView.image)
         pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country)
         pickerDelegate?.countryPicker?(self, didSelectCountryWithName: country, flag: cell.flagImageView.image)
         //pickerDelegate?.countryPicker?(self, didSelectCountryWithInfo: country, flag : cell.flagImageView.image)

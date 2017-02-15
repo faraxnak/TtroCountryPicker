@@ -65,7 +65,7 @@ Pod::Spec.new do |s|
   #
 
   # s.platform     = :ios
-  s.platform     = :ios, "10.0"
+  s.platform     = :ios, "9.0"
 
   #  When using multiple platforms
   # s.ios.deployment_target = "5.0"
@@ -92,7 +92,7 @@ Pod::Spec.new do |s|
   #
 
   s.source_files  = "TtroCountryPicker/**/*.{swift}"
-  s.exclude_files = "TtroCountryPickerSample"
+  # s.exclude_files = "TtroCountryPickerSample"
 
   # s.public_header_files = "Classes/**/*.h"
 
