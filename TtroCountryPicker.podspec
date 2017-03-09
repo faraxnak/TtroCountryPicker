@@ -106,7 +106,7 @@ Pod::Spec.new do |s|
   #
 
   # s.resource  = "icon.png"
-  # s.resources = "Resources/*.png"
+  s.resources = "TtroCountryPicker/Resources/flags.bundle"
 
   # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
