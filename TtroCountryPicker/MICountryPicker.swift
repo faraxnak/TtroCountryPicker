@@ -57,10 +57,10 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
 //    fileprivate var exchangeRatesUSDBased = [String : Double]()
     
     @objc public enum InfoType : Int {
-        case currecny, phoneCode, isoCode
+        case currency, phoneCode, isoCode
     }
     
-    public var infoType = InfoType.currecny
+    public var infoType = InfoType.currency
     
     convenience public init(completionHandler: ((String, String) -> ())?) {
         self.init()
@@ -78,7 +78,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.TtroColors.white.color
         self.tableView.separatorStyle = .none
-        infoType = pickerDelegate?.countryPicker(setInfoType: self) ?? .currecny
+        infoType = pickerDelegate?.countryPicker(setInfoType: self) ?? .currency
         performFetch()
     }
     
@@ -104,7 +104,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         if self.tableView.tableHeaderView == nil {
             searchController = UISearchController(searchResultsController: nil)
             switch infoType {
-            case .currecny:
+            case .currency:
                 searchController.searchBar.scopeButtonTitles = ["Name", "Currency"]
             case .phoneCode:
                 searchController.searchBar.scopeButtonTitles = ["Name", "Phone code"]
@@ -168,7 +168,7 @@ extension MICountryPicker {
             cell?.nameLabel.text = country.name
             
             switch infoType {
-            case .currecny:
+            case .currency:
                 cell?.infoLabel.text = country.currency?.title
             case .phoneCode:
                 cell?.infoLabel.text = country.phoneCode
@@ -230,7 +230,7 @@ extension MICountryPicker: UISearchResultsUpdating {
             lastSearch = searchController.searchBar.text!
             if (searchController.searchBar.selectedScopeButtonIndex == 1) {
                 switch infoType {
-                case .currecny:
+                case .currency:
                     pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: nil, currency: searchController.searchBar.text)
                 case .isoCode:
                     pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: searchController.searchBar.text, phoneCode: nil, currency: nil)
