@@ -15,7 +15,7 @@ import UIKit
 
 open class BWSwipeRevealCell: BWSwipeCell {
     
-    open var backViewbackgroundColor: UIColor = UIColor(white: 0.92, alpha: 1)
+    open var backViewbackgroundColor: UIColor = UIColor.clear //UIColor(white: 0.92, alpha: 1)
     fileprivate var _backView: UIView?
     open var backView: UIView? {
         if _backView == nil {

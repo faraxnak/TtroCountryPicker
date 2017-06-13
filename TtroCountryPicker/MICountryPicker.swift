@@ -64,15 +64,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     
     convenience public init(completionHandler: ((String, String) -> ())?) {
         self.init()
-//        self.didSelectCountryClosure = completionHandler
     }
-    
-//    public func checkCountryList(){
-//        if (coreDataSource.countryPicker(numberOfCountries: self) == 0){
-//            getData()
-//        }
-//    }
-    
     
     override open func viewDidLoad() {
         super.viewDidLoad()
@@ -152,32 +144,30 @@ extension MICountryPicker {
         if (cell == nil){
             return
         }
-//        do {
-//            let country = Country() //try fetchedResultsController.object(at: indexPath) as! CountryMO
-//            let bundle = "flags.bundle/"
-            let country = pickerDataSource.country(countryWithNSFRResult: fetchedResultsController.object(at: indexPath))
-            
-            if let code = country.code {
-                if let filePath = Bundle(for: MICountryPicker.self).path(forResource: "/flags.bundle/" + code.lowercased(), ofType: "png"){
-                    cell?.flagImageView.image = UIImage(contentsOfFile: filePath)
-                } else {
-                    // put general flag image instead of coutries flag
-                }
+        let country = pickerDataSource.country(countryWithNSFRResult: fetchedResultsController.object(at: indexPath))
+        cell?.flagImageView.image = getCountryFlag(country: country)
+        cell?.nameLabel.text = country.name
+        
+        switch infoType {
+        case .currency:
+            cell?.infoLabel.text = country.currency?.title
+        case .phoneCode:
+            cell?.infoLabel.text = country.phoneCode
+        case .isoCode:
+            cell?.infoLabel.text = country.code
+        }
+    }
+    
+    public func getCountryFlag(country: CountryP) -> UIImage? {
+        if let code = country.code {
+            if let filePath = Bundle(for: MICountryPicker.self).path(forResource: "/flags.bundle/" + code.lowercased(), ofType: "png"){
+                return UIImage(contentsOfFile: filePath)
+            } else {
+                return nil
             }
-            
-            cell?.nameLabel.text = country.name
-            
-            switch infoType {
-            case .currency:
-                cell?.infoLabel.text = country.currency?.title
-            case .phoneCode:
-                cell?.infoLabel.text = country.phoneCode
-            case .isoCode:
-                cell?.infoLabel.text = country.code
-            }
-//        } catch {
-//            print(error)
-//        }
+        } else {
+            return nil
+        }
     }
     
     override open func sectionIndexTitles(for tableView: UITableView) -> [String]? {
@@ -278,37 +268,11 @@ extension MICountryPicker : NSFetchedResultsControllerDelegate {
         }
         do {
             try fetchedResultsController.performFetch()
-            //fetchedCountries.removeAll()
-//            guard let sectionCount = fetchedResultsController.sections?.count else {
-//                return
-//            }
-//            if (sectionCount == 0){
-//                getData()
-//            }
-//            for i in 0 ..< sectionCount {
-//                let sections = self.fetchedResultsController.sections!
-//                let sectionInfo = sections[i]
-//                
-//                fetchedCountries.append(sectionInfo.objects as! [CountryMO])
-//            }
             tableView.reloadData()
         } catch {
             print(error)
         }
     }
-    
-//    func getData() {
-//        serverDataSource.countryPicker(self, getCountriesName: { (countries) in
-//            self.countries = countries
-//            self.getCurrencies()
-//        })
-//    }
-//    
-//    func getCurrencies() {
-//        serverDataSource.countryPicker(self, getCountriesCurrency: { (currencies) in
-//            self.coreDataSource.countryPicker(addCountries: self.countries, countryCurrencies: currencies)
-//        })
-//    }
     
     public func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
         tableView.beginUpdates()

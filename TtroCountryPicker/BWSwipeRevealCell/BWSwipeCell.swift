@@ -88,13 +88,13 @@ open class BWSwipeCell:UITableViewCell {
     
     open func initialize() {
         self.selectionStyle = .none
-        self.contentView.backgroundColor = UIColor.white
+//        self.contentView.backgroundColor = UIColor.white
         let panGestureRecognizer: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(BWSwipeCell.handlePanGesture(_:)))
         panGestureRecognizer.delegate = self
         self.addGestureRecognizer(panGestureRecognizer)
         
         let backgroundView: UIView = UIView(frame: self.frame)
-        backgroundView.backgroundColor = UIColor.white
+//        backgroundView.backgroundColor = UIColor.white
         self.backgroundView = backgroundView
     }
     
