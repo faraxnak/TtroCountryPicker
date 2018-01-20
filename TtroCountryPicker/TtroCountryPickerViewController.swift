@@ -18,18 +18,6 @@ public class TtroCountryPickerViewController: UINavigationController {
     
     let countryPicker = MICountryPicker(completionHandler: nil)
     
-//    convenience init(){
-//        self.init(rootViewController : countryPicker)
-//    }
-//    
-//    override init(rootViewController: UIViewController) {
-//        super.init(rootViewController : rootViewController)
-//    }
-//    
-//    required init?(coder aDecoder: NSCoder) {
-//        fatalError("init(coder:) has not been implemented")
-//    }
-    
     override public func viewDidLoad() {
         self.viewControllers = [countryPicker]
         
