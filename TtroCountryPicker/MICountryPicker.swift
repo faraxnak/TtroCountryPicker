@@ -72,6 +72,10 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         self.tableView.separatorStyle = .none
         infoType = pickerDelegate?.countryPicker(setInfoType: self) ?? .currency
         performFetch()
+        
+        if #available(iOS 11.0, *) {
+            navigationItem.hidesSearchBarWhenScrolling = false
+        }
     }
     
     // MARK : navigation bar
@@ -84,6 +88,13 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
         self.navigationController?.view.backgroundColor = UIColor.orange
         self.title = "Select Country"
+    }
+    
+    public override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if #available(iOS 11.0, *) {
+            navigationItem.hidesSearchBarWhenScrolling = true
+        }
     }
     
     func cancel() {
@@ -107,7 +118,12 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             searchController.searchBar.delegate = self
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.barTintColor = UIColor.TtroColors.white.color
-            tableView.tableHeaderView = searchController.searchBar
+            if #available(iOS 11.0, *) {
+                navigationItem.searchController = searchController
+            } else {
+                // Fallback on earlier versions
+                tableView.tableHeaderView = searchController.searchBar
+            }
         }
     }
 }
