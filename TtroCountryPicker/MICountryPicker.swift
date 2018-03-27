@@ -161,17 +161,21 @@ extension MICountryPicker {
             return
         }
         let country = pickerDataSource.country(countryWithNSFRResult: fetchedResultsController.object(at: indexPath))
-        cell?.flagImageView.image = getCountryFlag(country: country)
-        cell?.nameLabel.text = country.name
-        
-        switch infoType {
-        case .currency:
-            cell?.infoLabel.text = country.currency?.title
-        case .phoneCode:
-            cell?.infoLabel.text = country.phoneCode
-        case .isoCode:
-            cell?.infoLabel.text = country.code
-        }
+        cell?.setData(country: country, infoType: infoType, flag: getCountryFlag(country: country))
+//        cell?.flagImageView.image = getCountryFlag(country: country)
+//        cell?.nameLabel.text = country.name
+//        if (country.name != country.originName){
+//            cell?.originNameLabel.text = country.originName
+//        }
+//
+//        switch infoType {
+//        case .currency:
+//            cell?.infoLabel.text = country.currency?.title
+//        case .phoneCode:
+//            cell?.infoLabel.text = country.phoneCode
+//        case .isoCode:
+//            cell?.infoLabel.text = country.code
+//        }
     }
     
     public func getCountryFlag(country: CountryP) -> UIImage? {
