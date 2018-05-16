@@ -97,7 +97,7 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         }
     }
     
-    func cancel() {
+    @objc func cancel() {
         self.dismiss(animated: true, completion: nil)
     }
     
