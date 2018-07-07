@@ -69,6 +69,8 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
     override open func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.TtroColors.white.color
+        tableView.sectionIndexBackgroundColor = UIColor.clear
+        tableView.sectionIndexTrackingBackgroundColor = UIColor.clear
         self.tableView.separatorStyle = .none
         infoType = pickerDelegate?.countryPicker(setInfoType: self) ?? .currency
         performFetch()
@@ -83,11 +85,12 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         tableView.register(CountryTableViewCell.self, forCellReuseIdentifier: countryPickerCell)
         createSearchBar()
         definesPresentationContext = true
-        self.navigationController?.navigationBar.barTintColor = UIColor.TtroColors.white.color
+        self.navigationController?.navigationBar.barTintColor = UIColor.TtroColors.darkBlue.color
         //        self.navigationController?.navigationBar.translucent = false
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
-        self.navigationController?.view.backgroundColor = UIColor.orange
+        
         self.title = "Select Country"
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.TtroColors.white.color]
     }
     
     public override func viewDidAppear(_ animated: Bool) {
@@ -114,11 +117,26 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             case .isoCode:
                 searchController.searchBar.scopeButtonTitles = ["Name", "ISO code"]
             }
+            searchController.searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedStringKey.foregroundColor.rawValue : UIColor.white],
+                                                                            for: UIControlState.normal)
+            searchController.searchBar.setScopeBarButtonTitleTextAttributes(
+                [NSAttributedStringKey.foregroundColor.rawValue : UIColor.TtroColors.darkBlue.color],
+                for: UIControlState.selected)
+            if let segmentedView = findSegmentedControl(view: searchController.searchBar) {
+                print("found")
+                segmentedView.tintColor = UIColor.TtroColors.white.color
+            }
+            
             searchController.searchResultsUpdater = self
             searchController.searchBar.delegate = self
             searchController.dimsBackgroundDuringPresentation = false
-            searchController.searchBar.barTintColor = UIColor.TtroColors.white.color
+            searchController.searchBar.barTintColor = UIColor.TtroColors.darkBlue.color
+
             if #available(iOS 11.0, *) {
+//                if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
+//                    textfield.backgroundColor = UIColor.TtroColors.white.color
+//                    textfield.defaultTextAttributes = [NSAttributedStringKey.foregroundColor.rawValue : UIColor.white]
+//                }
                 navigationItem.searchController = searchController
             } else {
                 // Fallback on earlier versions
@@ -126,6 +144,21 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             }
         }
     }
+    
+    func findSegmentedControl(view : UIView) -> UIView? {
+        for v in view.subviews {
+            if v is UISegmentedControl {
+                print(v)
+                return v
+            } else {
+                if let found = findSegmentedControl(view : v) {
+                    return found
+                }
+            }
+        }
+        return nil
+    }
+    
 }
 
 // MARK: - Table view data source
