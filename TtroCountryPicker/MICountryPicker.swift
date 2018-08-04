@@ -87,9 +87,9 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         definesPresentationContext = true
         self.navigationController?.navigationBar.barTintColor = UIColor.TtroColors.darkBlue.color
         //        self.navigationController?.navigationBar.translucent = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel".localized(), style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
         
-        self.title = "Select Country"
+        self.title = "Select Country".localized()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.TtroColors.white.color]
     }
     
