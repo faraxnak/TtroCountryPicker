@@ -41,7 +41,7 @@ open class CountryTableViewCell: BWSwipeRevealCell {
         flagImageView.easy.layout([
             Height(CountryTableViewCell.elementHeight),
             Width(CountryTableViewCell.elementHeight),
-            Left(10).to(contentView, .left),
+            Leading(10).to(contentView),
             CenterY().to(contentView, .centerY)
         ])
         
@@ -49,16 +49,16 @@ open class CountryTableViewCell: BWSwipeRevealCell {
         flagImageView.layer.cornerRadius = CountryTableViewCell.elementHeight/2
         flagImageView.contentMode = .scaleAspectFit
         
-        infoLabel = UILabel()
+        infoLabel = TtroLabel()
         infoLabel.translatesAutoresizingMaskIntoConstraints = false
         contentView.addSubview(infoLabel)
         infoLabel.easy.layout([
             Height(CountryTableViewCell.elementHeight),
-            Right(10).to(contentView, .right),
+            Trailing(10).to(contentView),
             CenterY().to(contentView, .centerY),
             Width(<=0*0.4).like(contentView)
         ])
-        infoLabel.textAlignment = .right
+        infoLabel.textAlignment = isRightToLeft ? .left : .right
         
         nameLabel = TtroLabel(font: UIFont.TtroPayWandFonts.regular1.font, color: UIColor.black)
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
@@ -70,8 +70,8 @@ open class CountryTableViewCell: BWSwipeRevealCell {
         nameLabel.easy.layout([
             Height(30),
             Width(<=0*0.6).like(contentView),
-            Left(10).to(flagImageView, .right),
-            Right(5).to(infoLabel, .left),
+            Leading(10).to(flagImageView, .trailing),
+            Trailing(5).to(infoLabel, .leading),
             CenterY().to(contentView, .centerY).when({ [weak self] () -> Bool in
                 return self?.originNameLabel.text?.count ?? 0 <= 0
             }),
@@ -83,10 +83,10 @@ open class CountryTableViewCell: BWSwipeRevealCell {
         originNameLabel.easy.layout([
 //            Height(30),
             Width().like(nameLabel),
-            Left(10).to(flagImageView, .right),
+            Leading(10).to(flagImageView, .trailing),
             //CenterY().to(contentView, .centerY),
             Top(5).to(nameLabel),
-            Right(5).to(infoLabel, .left)
+            Trailing(5).to(infoLabel, .leading)
             ])
         
         originNameLabel.adjustsFontSizeToFitWidth = true
