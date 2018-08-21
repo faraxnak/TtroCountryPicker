@@ -269,20 +269,20 @@ extension MICountryPicker {
 extension MICountryPicker: UISearchResultsUpdating {
     
     public func updateSearchResults(for searchController: UISearchController) {
-        if (searchController.searchBar.text != lastSearch){
-            lastSearch = searchController.searchBar.text!
+        if (searchController.searchBar.textInEnglish != lastSearch){
+            lastSearch = searchController.searchBar.textInEnglish!
             if (searchController.searchBar.selectedScopeButtonIndex == 1) {
                 switch infoType {
                 case .currency:
-                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: nil, currency: searchController.searchBar.text)
+                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: nil, currency: searchController.searchBar.textInEnglish)
                 case .isoCode:
-                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: searchController.searchBar.text, phoneCode: nil, currency: nil)
+                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: searchController.searchBar.textInEnglish, phoneCode: nil, currency: nil)
                 case .phoneCode:
-                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: searchController.searchBar.text, currency: nil)
+                    pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name : nil, isoCode: nil, phoneCode: searchController.searchBar.textInEnglish, currency: nil)
                 }
-                //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "phoneCode beginswith %@", searchController.searchBar.text!)
-            } else if (searchController.searchBar.selectedScopeButtonIndex == 0 && searchController.searchBar.text != ""){
-                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name: searchController.searchBar.text, isoCode: nil, phoneCode: nil, currency: nil)
+                //self.fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "phoneCode beginswith %@", searchController.searchBar.textInEnglish!)
+            } else if (searchController.searchBar.selectedScopeButtonIndex == 0 && searchController.searchBar.textInEnglish != ""){
+                pickerDataSource.setFRCPredicate(countryFRC: fetchedResultsController, name: searchController.searchBar.textInEnglish, isoCode: nil, phoneCode: nil, currency: nil)
             } else {
                 self.fetchedResultsController.fetchRequest.predicate = nil
                 
