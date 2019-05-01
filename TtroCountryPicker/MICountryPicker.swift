@@ -87,7 +87,17 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
         definesPresentationContext = true
         self.navigationController?.navigationBar.barTintColor = UIColor.TtroColors.darkBlue.color
         //        self.navigationController?.navigationBar.translucent = false
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel".localized(), style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
+        let barButton = UIBarButtonItem(title: "Cancel".localized(), style: UIBarButtonItemStyle.plain, target: self, action: #selector(MICountryPicker.cancel))
+        barButton.setTitleTextAttributes([
+            NSAttributedStringKey.font : UIFont.TtroPayWandFonts.light4.font,
+            NSAttributedStringKey.foregroundColor : UIColor.TtroColors.cyan.color,
+            ], for: UIControlState.normal)
+        self.navigationItem.leftBarButtonItem = barButton
+        
+//        navigationItem.leftBarButtonItem?.tintColor = UIColor.TtroColors.cyan.color
+        
+//        navigationItem.leftBarButtonItem?.setTitleTextAttributes(
+//            ], for: UIControlState.normal)
         
         self.title = "Select Country".localized()
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.TtroColors.white.color]
@@ -111,11 +121,11 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             searchController = UISearchController(searchResultsController: nil)
             switch infoType {
             case .currency:
-                searchController.searchBar.scopeButtonTitles = ["Name", "Currency"]
+                searchController.searchBar.scopeButtonTitles = ["Name".localized(), "Currency".localized()]
             case .phoneCode:
-                searchController.searchBar.scopeButtonTitles = ["Name", "Phone code"]
+                searchController.searchBar.scopeButtonTitles = ["Name".localized(), "Phone code".localized()]
             case .isoCode:
-                searchController.searchBar.scopeButtonTitles = ["Name", "ISO code"]
+                searchController.searchBar.scopeButtonTitles = ["Name".localized(), "ISO code".localized()]
             }
             searchController.searchBar.setScopeBarButtonTitleTextAttributes([NSAttributedStringKey.foregroundColor.rawValue : UIColor.white],
                                                                             for: UIControlState.normal)
@@ -131,7 +141,8 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             searchController.searchBar.delegate = self
             searchController.dimsBackgroundDuringPresentation = false
             searchController.searchBar.barTintColor = UIColor.TtroColors.darkBlue.color
-
+            searchController.searchBar.setValue("Cancel".localized(), forKey:"_cancelButtonText")
+            
             if #available(iOS 11.0, *) {
 //                if let textfield = searchController.searchBar.value(forKey: "searchField") as? UITextField {
 //                    textfield.backgroundColor = UIColor.TtroColors.white.color
@@ -157,6 +168,13 @@ public class MICountryPicker: UITableViewController, UISearchBarDelegate {
             }
         }
         return nil
+    }
+    
+    override public func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        for cell in tableView.visibleCells {
+            (cell as? CountryTableViewCell)?.infoLabel.textAlignment = view.isRightToLeft ? .left : .right
+        }
     }
     
 }

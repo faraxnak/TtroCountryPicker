@@ -8,6 +8,7 @@ target 'TtroCountryPicker' do
   # Pods for TtroCountryPicker
   pod 'EasyPeasy'
   pod 'UIColor_Hex_Swift'
+  pod 'SwifterSwift'
   pod 'PayWandModelProtocols', :path => '../PayWandModelProtocols/'
   pod 'PayWandBasicElements', :path => '../PayWandBasicElements'
 
